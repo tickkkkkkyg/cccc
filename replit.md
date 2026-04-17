@@ -16,6 +16,7 @@ A static website for Xyle Hosting (formerly Surf Hosting), a provider of hosting
 ├── index.html                  # Main landing page
 ├── products.html               # Product lineup overview
 ├── server-marketplace.html     # Dedicated servers marketplace
+├── company.html                # About Us page
 ├── category/
 │   ├── discord-bot.html        # Discord bot hosting plans
 │   ├── essential-vps.html      # VPS hosting plans
