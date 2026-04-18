@@ -487,6 +487,7 @@ svg {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -499,10 +500,6 @@ body.xy-silky-scroll {
   overscroll-behavior-y: none;
 }
 
-body.xy-scrolling * {
-  pointer-events: none;
-}
-
 .xy-skeleton-loader {
   position: fixed;
   inset: 0;
@@ -511,9 +508,14 @@ body.xy-scrolling * {
   opacity: 1;
   pointer-events: none;
   transform: translateZ(0);
-  transition: opacity 0.42s cubic-bezier(.22,1,.36,1), visibility 0.42s cubic-bezier(.22,1,.36,1);
+  transition: opacity 0.48s cubic-bezier(.22,1,.36,1), visibility 0.48s cubic-bezier(.22,1,.36,1);
   visibility: visible;
   will-change: opacity;
+}
+
+.xy-page-transition {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .xy-skeleton-loader.xy-hide {
@@ -525,6 +527,95 @@ body.xy-scrolling * {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
   padding: 26px 0;
+}
+
+.xy-loader-brand {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.xy-loader-logo {
+  align-items: center;
+  background: #1a2eb8;
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(57,89,255,0.22);
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  position: relative;
+  width: 54px;
+}
+
+.xy-loader-logo::before,
+.xy-loader-logo::after,
+.xy-loader-logo span::before,
+.xy-loader-logo span::after {
+  background: #fff;
+  border-radius: 999px;
+  content: "";
+  height: 4px;
+  left: 16px;
+  position: absolute;
+  top: 25px;
+  width: 22px;
+}
+
+.xy-loader-logo::before,
+.xy-loader-logo span::before {
+  transform: rotate(45deg);
+}
+
+.xy-loader-logo::after,
+.xy-loader-logo span::after {
+  transform: rotate(-45deg);
+}
+
+.xy-loader-logo span::before,
+.xy-loader-logo span::after {
+  animation: xy-logo-pulse 1.15s cubic-bezier(.22,1,.36,1) infinite;
+  opacity: 0.45;
+}
+
+.xy-loader-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.xy-loader-copy strong {
+  color: #1a2eb8;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.xy-loader-copy em {
+  color: #6b7a9e;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.2px;
+}
+
+.xy-loader-progress {
+  background: rgba(214,223,255,0.82);
+  border-radius: 999px;
+  height: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.xy-loader-progress span {
+  animation: xy-loader-progress 1.25s cubic-bezier(.22,1,.36,1) infinite;
+  background: linear-gradient(90deg, #1a2eb8, #3959ff, #86a0ff);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transform: translateX(-40%);
+  width: 42%;
 }
 
 .xy-skeleton-nav,
@@ -603,10 +694,48 @@ body.xy-scrolling * {
   }
 }
 
+@keyframes xy-loader-progress {
+  0% {
+    transform: translateX(-110%);
+  }
+  55% {
+    transform: translateX(70%);
+  }
+  100% {
+    transform: translateX(245%);
+  }
+}
+
+@keyframes xy-logo-pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.32) rotate(45deg);
+  }
+}
+
+.xy-loader-logo span::after {
+  animation-name: xy-logo-pulse-alt;
+}
+
+@keyframes xy-logo-pulse-alt {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(-45deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.32) rotate(-45deg);
+  }
+}
+
 .xy-reveal {
   opacity: 0;
-  transform: translate3d(0, 18px, 0) scale(0.992);
-  transition: opacity 0.7s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms), transform 0.7s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms);
+  transform: translate3d(0, 14px, 0) scale(0.996);
+  transition: opacity 0.62s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms), transform 0.62s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms);
   will-change: opacity, transform;
 }
 
@@ -700,6 +829,7 @@ img {
   .sm-header-left { gap: 10px; }
   .xy-skeleton-grid { grid-template-columns: 1fr; }
   .xy-skeleton-card:nth-child(n+3) { display: none; }
+  .xy-loader-brand { justify-content: center; text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -718,7 +848,10 @@ img {
   .xy-skeleton-line::after,
   .xy-skeleton-pill::after,
   .xy-skeleton-card::after,
-  .xy-skeleton-nav::after {
+  .xy-skeleton-nav::after,
+  .xy-loader-progress span,
+  .xy-loader-logo span::before,
+  .xy-loader-logo span::after {
     animation: none;
   }
 }

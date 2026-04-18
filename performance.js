@@ -24,6 +24,14 @@
     loader.setAttribute('aria-hidden', 'true');
     loader.innerHTML = [
       '<div class="xy-skeleton-wrap">',
+      '<div class="xy-loader-brand">',
+      '<div class="xy-loader-logo"><span></span></div>',
+      '<div class="xy-loader-copy">',
+      '<strong>Loading XyleHosting</strong>',
+      '<em>Preparing a smooth experience</em>',
+      '</div>',
+      '</div>',
+      '<div class="xy-loader-progress"><span></span></div>',
       '<div class="xy-skeleton-nav"></div>',
       '<div class="xy-skeleton-hero">',
       '<span class="xy-skeleton-line xy-skeleton-title"></span>',
@@ -175,8 +183,7 @@
     var current = window.pageYOffset || document.documentElement.scrollTop || 0;
     var target = current;
     var frame = null;
-    var wheelTimeout = null;
-    var ease = 0.13;
+    var ease = 0.16;
 
     function maxScroll() {
       return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
@@ -188,9 +195,9 @@
 
     function animate() {
       var distance = target - current;
-      var dynamicEase = Math.min(0.2, ease + Math.abs(distance) / 9000);
+      var dynamicEase = Math.min(0.24, ease + Math.abs(distance) / 8500);
       current += distance * dynamicEase;
-      if (Math.abs(distance) < 0.35) {
+      if (Math.abs(distance) < 0.3) {
         current = target;
         window.scrollTo(0, current);
         frame = null;
@@ -212,14 +219,15 @@
 
     window.addEventListener('wheel', function (event) {
       if (event.ctrlKey || event.metaKey || event.shiftKey || isBlockedTarget(event.target)) return;
-      var delta = Math.max(-140, Math.min(140, event.deltaY));
-      target = clamp(target + delta * 0.96);
+      if (!frame) {
+        current = window.pageYOffset || document.documentElement.scrollTop || 0;
+        target = current;
+      }
+      var mode = event.deltaMode === 1 ? 18 : event.deltaMode === 2 ? window.innerHeight : 1;
+      var delta = Math.max(-120, Math.min(120, event.deltaY * mode));
+      target = clamp(target + delta * 0.9);
       event.preventDefault();
       start();
-      window.clearTimeout(wheelTimeout);
-      wheelTimeout = window.setTimeout(function () {
-        target = clamp(window.pageYOffset || document.documentElement.scrollTop || 0);
-      }, 220);
     }, { passive: false });
 
     window.addEventListener('keydown', function (event) {
@@ -256,6 +264,30 @@
     document.body.classList.add('xy-silky-scroll');
   }
 
+  function initPageTransitions() {
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        if (link.target || link.hasAttribute('download')) return;
+        var url;
+        try {
+          url = new URL(link.href, window.location.href);
+        } catch (error) {
+          return;
+        }
+        if (url.origin !== window.location.origin) return;
+        if (url.hash && url.pathname === window.location.pathname && url.search === window.location.search) return;
+        if (!/\/$|\.html$/.test(url.pathname)) return;
+        event.preventDefault();
+        var loader = createSkeleton();
+        if (loader) loader.classList.add('xy-page-transition');
+        window.setTimeout(function () {
+          window.location.href = url.href;
+        }, 130);
+      }, { passive: false });
+    });
+  }
+
   window.XyleSkeleton = {
     show: createSkeleton,
     hide: hideSkeleton,
@@ -276,8 +308,9 @@
     initSilkyScroll();
     initFastLinks();
     initSmartPrefetch();
+    initPageTransitions();
     window.requestAnimationFrame(function () {
-      window.setTimeout(hideSkeleton, 320);
+      window.setTimeout(hideSkeleton, 420);
     });
   });
 
