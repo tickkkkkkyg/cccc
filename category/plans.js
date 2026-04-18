@@ -135,7 +135,13 @@
       var locs = c.dataset.locations ? c.dataset.locations.split(',') : [];
       var show = t === activeTab && (activeLoc === 'all' || locs.indexOf(activeLoc) !== -1);
       c.classList.toggle('hidden', !show);
-      if (show) visible++;
+      if (show) {
+        visible++;
+        c.classList.remove('xy-visible');
+        window.requestAnimationFrame(function () {
+          c.classList.add('xy-visible');
+        });
+      }
     });
     var empty = document.getElementById('xp-empty');
     if (empty) empty.classList.toggle('show', visible === 0);

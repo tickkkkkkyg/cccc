@@ -41,6 +41,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 
 ## Key Implementation Notes
 - `custom.css` + `category/plans.css` included on all pages — handles logo sizing, mobile responsiveness, and plan card styles
+- `performance.js` is included on all pages for skeleton loading, image lazy-loading hints, smooth anchor scrolling, scroll reveal animations, and paint/layout optimizations
 - Webflow CSS loaded from CDN: `surf-hosting.webflow.b4719a4e3.min.css` (NOT renamed)
 - Webflow CDN blocks some assets (403) — specifically SVGs with IDs like `661bfcfd7a14900ef3a20f5[3-6]`. These are replaced with inline SVGs in custom pages.
 - Working CDN assets: IDs starting `6620...` (social icons), `661bfcfd7a14900ef3a20f[1-2]...` (Boxicons), `661bfcfd7a14900ef3a20f0b/...` (category/plan icons)
