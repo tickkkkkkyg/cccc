@@ -46,6 +46,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 - Working CDN assets: IDs starting `6620...` (social icons), `661bfcfd7a14900ef3a20f[1-2]...` (Boxicons), `661bfcfd7a14900ef3a20f0b/...` (category/plan icons)
 - Custom pages (blog, datacenter, company): light theme (#f0f4ff cards) with dark text to match Webflow's overall light design
 - Promo banner removed from all pages
+- Homepage includes a standalone `xyle-why-section` trust block styled in `custom.css` with cards for DDoS protection, low-latency network, premium hardware, and helpful support
 - **CRITICAL**: Do NOT use `style="opacity:0"` on `.content` divs in custom pages — Webflow's IX2 animation won't trigger on non-CMS pages, leaving content invisible. Remove the inline opacity style instead.
 - **CRITICAL**: Custom sections inserted into index.html must NOT use Webflow's `class="content"` or `class="section"` wrappers — they will be constrained by Webflow's 2-column grid. Use standalone inline-styled sections instead.
 

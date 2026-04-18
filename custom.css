@@ -5,6 +5,98 @@
   letter-spacing: -0.5px !important;
 }
 
+.xyle-why-section {
+  background: #f8faff;
+  padding: 88px 20px;
+}
+.xyle-why-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.xyle-why-head {
+  max-width: 720px;
+  margin-bottom: 34px;
+}
+.xyle-eyebrow {
+  color: #3959ff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.xyle-why-head h2 {
+  color: #121722;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.12;
+  margin: 0 0 16px;
+}
+.xyle-why-head p {
+  color: #667085;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+  margin: 0;
+}
+.xyle-why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.xyle-why-card {
+  background: #fff;
+  border: 1px solid #dfe6ff;
+  border-radius: 22px;
+  box-shadow: 0 18px 50px rgba(26, 46, 184, 0.08);
+  padding: 28px;
+}
+.xyle-why-icon {
+  align-items: center;
+  background: #eef2ff;
+  border-radius: 16px;
+  color: #3959ff;
+  display: flex;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: 22px;
+  width: 48px;
+}
+.xyle-why-icon svg {
+  height: 25px;
+  width: 25px;
+}
+.xyle-why-card h3 {
+  color: #121722;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.xyle-why-card p {
+  color: #667085;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+.xyle-why-cta {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  margin-top: 34px;
+}
+.xyle-why-link {
+  color: #1a2eb8;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 
 @media (max-width: 991px) {
@@ -38,6 +130,19 @@
   /* Pricing card padding */
   .card-plan {
     padding: 24px !important;
+  }
+  .xyle-why-section {
+    padding: 64px 20px;
+  }
+  .xyle-why-head h2 {
+    font-size: 32px;
+  }
+  .xyle-why-grid {
+    grid-template-columns: 1fr;
+  }
+  .xyle-why-cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
