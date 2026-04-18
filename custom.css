@@ -183,3 +183,66 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ===== SERVER MARKETPLACE — ENHANCED HEADERS & HERO BANNERS ===== */
+.sm-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+.sm-hdr-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.sm-hdr-loc {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #6b7a9e;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+.sm-hero-banner {
+  border-radius: 12px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+}
+.sm-hero-banner .xp-chip {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+}
+.sm-hero-banner .xp-chip svg {
+  width: 100%;
+  height: 100%;
+}
+.sm-hero-banner .xp-hname {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px;
+  line-height: 1.1;
+}
+.sm-hero-banner .xp-hcpu {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.4px;
+  line-height: 1.5;
+}
+.sm-intel-bg { background: linear-gradient(135deg, #0055a5 0%, #0071C5 60%, #003f8a 100%); }
+.sm-amd-bg   { background: linear-gradient(135deg, #b50000 0%, #ED1C24 60%, #7f0000 100%); }
+
+.xp-tab-chip { width: 26px; height: 26px; flex-shrink: 0; border-radius: 5px; overflow: visible; }
+
+@media (max-width: 600px) {
+  .sm-hero-banner { flex-direction: column; align-items: flex-start; }
+  .sm-header-left { gap: 10px; }
+}
