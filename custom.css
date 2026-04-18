@@ -616,6 +616,17 @@ body.xy-scrolling * {
   will-change: auto;
 }
 
+.xy-img {
+  opacity: 0;
+  transform: translateZ(0) scale(1.008);
+  transition: opacity 0.52s cubic-bezier(.22,1,.36,1), transform 0.52s cubic-bezier(.22,1,.36,1);
+}
+
+.xy-img.xy-img-ready {
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+}
+
 .xy-smooth-card {
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -641,6 +652,33 @@ a {
 .xp-card,
 .sm-card {
   transition-timing-function: cubic-bezier(.22,1,.36,1) !important;
+}
+
+.button,
+.button-dark,
+.button-blue,
+.link-block,
+.xp-tab,
+.xp-loc,
+.sm-card,
+.solutions {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.button:hover,
+.button-dark:hover,
+.button-blue:hover,
+.link-block:hover,
+.xp-tab:hover,
+.xp-loc:hover {
+  transform: translate3d(0, -2px, 0);
+}
+
+.xp-card:hover,
+.sm-card:hover,
+.solutions:hover {
+  transform: translate3d(0, -5px, 0);
 }
 
 .section,
@@ -671,6 +709,7 @@ img {
 
   .xy-reveal,
   .xy-reveal.xy-visible,
+  .xy-img,
   .xy-skeleton-loader {
     transition: none;
     transform: none;
