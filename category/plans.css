@@ -44,8 +44,6 @@
 }
 .xp-loc:hover  { border-color: #3959ff; background: #eef1ff; color: #1a2eb8; }
 .xp-loc.active { background: #1a2eb8; border-color: #1a2eb8; color: #fff; font-weight: 600; }
-.xp-loc.active img { filter: brightness(0) invert(1); }
-.xp-flag-img { width: 22px; height: auto; border-radius: 3px; display: block; }
 
 /* ── Section heading ── */
 .xp-head { text-align: center; padding: 24px 0 32px; }
