@@ -38,11 +38,23 @@ A static website for Xyle Hosting (formerly Surf Hosting), a provider of hosting
 ## Key Implementation Notes
 - `custom.css` included on all pages — handles logo sizing and mobile responsiveness
 - Webflow CSS loaded from CDN: `surf-hosting.webflow.b4719a4e3.min.css` (NOT renamed)
-- Webflow CDN blocks some assets (403) — specifically SVGs with IDs like `661bfcfd7a14900ef3a20f5[3-6]` and `661bfcfd7a14900ef3a20f5[0,4]`. These are replaced with inline SVGs in custom pages.
+- Webflow CDN blocks some assets (403) — specifically SVGs with IDs like `661bfcfd7a14900ef3a20f5[3-6]`. These are replaced with inline SVGs in custom pages.
 - Working CDN assets: IDs starting `6620...` (social icons), `661bfcfd7a14900ef3a20f[1-2]...` (Boxicons), `661bfcfd7a14900ef3a20f0b/...` (category/plan icons)
 - Custom pages (blog, datacenter, company): light theme (#f0f4ff cards) with dark text to match Webflow's overall light design
 - Promo banner removed from all pages
-- `data-w-id` on navbar div needed for Webflow JS to properly initialize nav interactions
+- **CRITICAL**: Do NOT use `style="opacity:0"` on `.content` divs in custom pages — Webflow's IX2 animation won't trigger on non-CMS pages, leaving content invisible. Remove the inline opacity style instead.
+
+## Plan Pages (Minecraft + VPS)
+- Shared system: `category/plans.css` + `category/plans.js` — all reusable filter UI
+- **CPU Chip illustrations**: JS-generated inline SVGs injected into `.xp-chip[data-brand][data-model]` divs
+  - Brands: `intel` (blue #0071C5), `amd` (red #ED1C24), `kvm` (dark blue #1a2eb8), `nvme` (purple #7c3aed), `storage` (slate #334155), `offer` (amber #d97706)
+  - Each chip shows brand label, sub-category, and specific model text
+- **Feature icons**: Hardware-specific inline SVGs injected via `data-icon` attribute (cpu/ram/ssd/hdd/vcpu/bandwidth/ip/ddos/backup/db/splits/support/check)
+- **Location filter**: Real flag images from `flagcdn.com` (22x16 for buttons, 16x12 for inline card tags)
+- **Locations**: India (in), Singapore (sg), Germany (de), Nepal (np) only
+- **Minecraft plans**: Intel ($3.99–$22.99 × 5 tiers), Ryzen ($8.99–$39.99 × 4 tiers), Offers (3 deals)
+- **VPS plans**: KVM ($4.99–$84.99 × 6 tiers), NVMe Ryzen ($19.99–$99.99 × 4 tiers), Storage ($14.99–$39.99 × 3 tiers)
+- Color theme: blues (#1a2eb8/#3959ff), no dark/black backgrounds — light card design throughout
 
 ## Development
 - Served via Python's built-in HTTP server on port 5000
