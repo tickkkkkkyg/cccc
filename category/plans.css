@@ -108,6 +108,8 @@
 .xp-hero.nvme-bg    { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 60%, #3b0e8a 100%); }
 .xp-hero.storage-bg { background: linear-gradient(135deg, #1e293b 0%, #334155 60%, #0f172a 100%); }
 .xp-hero.offer-bg   { background: linear-gradient(135deg, #92400e 0%, #d97706 60%, #78350f 100%); }
+.xp-hero.web-bg     { background: linear-gradient(135deg, #047857 0%, #059669 60%, #065f46 100%); }
+.xp-hero.discord-bg { background: linear-gradient(135deg, #3730a3 0%, #5865F2 60%, #2d3a8c 100%); }
 
 /* Chip SVG container */
 .xp-chip { width: 72px; height: 72px; flex-shrink: 0; }

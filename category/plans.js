@@ -7,7 +7,9 @@
     kvm:     { bg: '#1a2eb8', die: '#0a1560', pin: '#1a2eb8', label: 'intel\u00AE', sub1: 'XEON',        tc: '#adc8ff' },
     nvme:    { bg: '#7c3aed', die: '#3b0e8a', pin: '#7c3aed', label: 'AMD',         sub1: 'Ryzen\u2122 9', tc: '#ddd6fe' },
     storage: { bg: '#334155', die: '#1e293b', pin: '#475569', label: 'intel\u00AE', sub1: 'XEON',        tc: '#cbd5e1' },
-    offer:   { bg: '#d97706', die: '#78350f', pin: '#d97706', label: 'OFFER',       sub1: 'LIMITED',     tc: '#fde68a' }
+    offer:   { bg: '#d97706', die: '#78350f', pin: '#d97706', label: 'OFFER',       sub1: 'LIMITED',     tc: '#fde68a' },
+    web:     { bg: '#059669', die: '#065f46', pin: '#059669', label: 'WEB',         sub1: 'HOSTING',     tc: '#a7f3d0' },
+    discord: { bg: '#5865F2', die: '#2d3a8c', pin: '#5865F2', label: 'BOT',         sub1: 'DISCORD',     tc: '#c7d2fe' }
   };
 
   function chipSVG(brand, model) {
