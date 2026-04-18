@@ -487,10 +487,20 @@ svg {
 
 html {
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body.xy-loading {
   cursor: progress;
+}
+
+body.xy-silky-scroll {
+  overscroll-behavior-y: none;
+}
+
+body.xy-scrolling * {
+  pointer-events: none;
 }
 
 .xy-skeleton-loader {
@@ -500,8 +510,10 @@ body.xy-loading {
   background: linear-gradient(180deg, #f8faff 0%, #eef3ff 100%);
   opacity: 1;
   pointer-events: none;
-  transition: opacity 0.28s ease, visibility 0.28s ease;
+  transform: translateZ(0);
+  transition: opacity 0.42s cubic-bezier(.22,1,.36,1), visibility 0.42s cubic-bezier(.22,1,.36,1);
   visibility: visible;
+  will-change: opacity;
 }
 
 .xy-skeleton-loader.xy-hide {
@@ -521,7 +533,7 @@ body.xy-loading {
   background: rgba(255,255,255,0.72);
   border: 1px solid rgba(214,223,255,0.9);
   border-radius: 22px;
-  box-shadow: 0 18px 50px rgba(26,46,184,0.08);
+  box-shadow: 0 16px 42px rgba(26,46,184,0.07);
 }
 
 .xy-skeleton-nav {
@@ -563,7 +575,8 @@ body.xy-loading {
   inset: 0;
   transform: translateX(-100%);
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.72), transparent);
-  animation: xy-shimmer 1.2s infinite;
+  animation: xy-shimmer 1.05s cubic-bezier(.4,0,.2,1) infinite;
+  will-change: transform;
 }
 
 .xy-skeleton-title {
@@ -592,14 +605,14 @@ body.xy-loading {
 
 .xy-reveal {
   opacity: 0;
-  transform: translate3d(0, 22px, 0);
-  transition: opacity 0.58s ease, transform 0.58s cubic-bezier(.2,.8,.2,1);
+  transform: translate3d(0, 18px, 0) scale(0.992);
+  transition: opacity 0.7s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms), transform 0.7s cubic-bezier(.22,1,.36,1) var(--xy-delay, 0ms);
   will-change: opacity, transform;
 }
 
 .xy-reveal.xy-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0) scale(1);
   will-change: auto;
 }
 
@@ -607,6 +620,27 @@ body.xy-loading {
   backface-visibility: hidden;
   transform: translateZ(0);
   contain: layout paint;
+}
+
+.button,
+.button-hero a,
+.nav-link,
+.xp-tab,
+.xp-loc,
+.xp-card,
+.solutions,
+.sm-card,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button,
+.link-block,
+.xp-tab,
+.xp-loc,
+.xp-card,
+.sm-card {
+  transition-timing-function: cubic-bezier(.22,1,.36,1) !important;
 }
 
 .section,

@@ -12,6 +12,9 @@
     '.blog-card',
     '.company-card'
   ].join(',');
+  var motion = {
+    scrollTo: null
+  };
 
   function createSkeleton() {
     if (document.querySelector('.xy-skeleton-loader')) return null;
@@ -74,20 +77,35 @@
       return;
     }
 
+    var pending = [];
+    var ticking = false;
+
+    function flushVisible() {
+      ticking = false;
+      pending.splice(0).forEach(function (item) {
+        item.classList.add('xy-visible');
+        item.style.transitionDelay = '';
+      });
+    }
+
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        entry.target.classList.add('xy-visible');
+        pending.push(entry.target);
         observer.unobserve(entry.target);
       });
+      if (!ticking && pending.length) {
+        ticking = true;
+        window.requestAnimationFrame(flushVisible);
+      }
     }, {
-      rootMargin: '0px 0px -10% 0px',
-      threshold: 0.08
+      rootMargin: '0px 0px -12% 0px',
+      threshold: 0.06
     });
 
     items.forEach(function (item, index) {
       item.classList.add('xy-reveal', 'xy-smooth-card');
-      item.style.transitionDelay = Math.min(index % 6, 5) * 35 + 'ms';
+      item.style.setProperty('--xy-delay', Math.min(index % 5, 4) * 28 + 'ms');
       observer.observe(item);
     });
   }
@@ -98,9 +116,86 @@
         var target = document.querySelector(link.getAttribute('href'));
         if (!target) return;
         event.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        var top = target.getBoundingClientRect().top + window.pageYOffset;
+        if (motion.scrollTo) {
+          motion.scrollTo(top);
+        } else {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }, { passive: false });
     });
+  }
+
+  function initSilkyScroll() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    if (reduce || coarse || !('requestAnimationFrame' in window)) return;
+
+    var current = window.pageYOffset || document.documentElement.scrollTop || 0;
+    var target = current;
+    var frame = null;
+    var wheelTimeout = null;
+    var ease = 0.16;
+
+    function maxScroll() {
+      return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    }
+
+    function clamp(value) {
+      return Math.max(0, Math.min(maxScroll(), value));
+    }
+
+    function animate() {
+      var distance = target - current;
+      current += distance * ease;
+      if (Math.abs(distance) < 0.45) {
+        current = target;
+        window.scrollTo(0, current);
+        frame = null;
+        document.body.classList.remove('xy-scrolling');
+        return;
+      }
+      window.scrollTo(0, current);
+      frame = window.requestAnimationFrame(animate);
+    }
+
+    function start() {
+      document.body.classList.add('xy-scrolling');
+      if (!frame) frame = window.requestAnimationFrame(animate);
+    }
+
+    function isBlockedTarget(targetElement) {
+      return !!(targetElement && targetElement.closest && targetElement.closest('input, textarea, select, [contenteditable="true"], [data-native-scroll]'));
+    }
+
+    window.addEventListener('wheel', function (event) {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || isBlockedTarget(event.target)) return;
+      target = clamp(target + event.deltaY * 0.92);
+      event.preventDefault();
+      start();
+      window.clearTimeout(wheelTimeout);
+      wheelTimeout = window.setTimeout(function () {
+        target = clamp(window.pageYOffset || document.documentElement.scrollTop || 0);
+      }, 220);
+    }, { passive: false });
+
+    window.addEventListener('scroll', function () {
+      if (frame) return;
+      current = window.pageYOffset || document.documentElement.scrollTop || 0;
+      target = current;
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      target = clamp(target);
+      current = clamp(current);
+    }, { passive: true });
+
+    motion.scrollTo = function (top) {
+      target = clamp(top);
+      start();
+    };
+
+    document.body.classList.add('xy-silky-scroll');
   }
 
   window.XyleSkeleton = {
@@ -120,9 +215,10 @@
     createSkeleton();
     optimizeImages();
     initScrollReveal();
+    initSilkyScroll();
     initFastLinks();
     window.requestAnimationFrame(function () {
-      window.setTimeout(hideSkeleton, 450);
+      window.setTimeout(hideSkeleton, 320);
     });
   });
 
