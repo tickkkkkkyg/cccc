@@ -1,4 +1,5 @@
 import http.server
+import os
 import socketserver
 
 class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
@@ -9,5 +10,7 @@ class NoCacheHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
 if __name__ == '__main__':
-    with socketserver.TCPServer(('0.0.0.0', 5000), NoCacheHandler) as httpd:
+    port = int(os.environ.get('PORT', '5000'))
+    socketserver.TCPServer.allow_reuse_address = True
+    with socketserver.TCPServer(('0.0.0.0', port), NoCacheHandler) as httpd:
         httpd.serve_forever()

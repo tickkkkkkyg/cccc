@@ -74,6 +74,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 ## Development
 - Served via Python's built-in HTTP server on port 5000
 - Workflow: `python3 -m http.server 5000 --bind 0.0.0.0`
+- `server.py` is available as an optional no-cache local server and respects the `PORT` environment variable, defaulting to 5000
 
 ## Deployment
 - Deployment target: static
