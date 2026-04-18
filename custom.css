@@ -4,6 +4,31 @@
   font-weight: 900 !important;
   letter-spacing: -0.5px !important;
 }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img,
+svg {
+  max-width: 100%;
+}
+.paragraph-hero {
+  max-width: 560px;
+}
+.button-hero {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+}
+.solutions {
+  display: flex;
+  flex-direction: column;
+}
+.solutions .link-block {
+  margin-top: auto;
+}
 
 .xyle-why-section {
   background: #f8faff;
@@ -99,12 +124,42 @@
 
 /* ===== MOBILE RESPONSIVE ===== */
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .nav-block {
     padding: 0 20px !important;
   }
   .brand.w-nav-brand > span {
     font-size: 18px !important;
+  }
+  .button-desktop {
+    display: none !important;
+  }
+  .grid-solutions {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .nav-menu {
+    background: #fff !important;
+    border-bottom: 1px solid #e4e9ff;
+    box-shadow: 0 22px 55px rgba(13, 27, 42, 0.12);
+    padding: 14px 20px 22px !important;
+  }
+  .nav-link {
+    padding: 14px 0 !important;
+  }
+  .button-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .xyle-why-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .menu-button {
+    display: block !important;
   }
 }
 
@@ -122,10 +177,54 @@
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+  .section-hero {
+    min-height: auto !important;
+    padding-bottom: 48px !important;
+  }
+  .grid-hero {
+    gap: 28px !important;
+  }
+  .block-hero {
+    padding-top: 28px !important;
+  }
   /* Hero heading size */
   .heading-hero {
     font-size: 36px !important;
     line-height: 1.2 !important;
+  }
+  .paragraph-hero {
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+  }
+  .button-hero {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+  .button-hero .button,
+  .button-hero .link-button {
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+  .lottie {
+    min-height: 300px;
+  }
+  .solutions {
+    min-height: auto !important;
+    padding: 24px !important;
+  }
+  .grid-solutions > .button {
+    justify-self: stretch !important;
+    text-align: center;
+    width: 100%;
+  }
+  .clients {
+    margin-top: 34px !important;
+  }
+  .subtitle-clients {
+    line-height: 1.5 !important;
+    text-align: center;
   }
   /* Pricing card padding */
   .card-plan {
@@ -149,6 +248,45 @@
 @media (max-width: 480px) {
   .brand.w-nav-brand > span {
     font-size: 16px !important;
+  }
+  .nav-block {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  .brand.w-nav-brand svg {
+    height: 28px;
+    width: 28px;
+  }
+  .heading-hero {
+    font-size: 34px !important;
+  }
+  .link-info {
+    max-width: 100%;
+  }
+  .text-info {
+    font-size: 10px !important;
+    white-space: normal !important;
+  }
+  .lottie {
+    min-height: 230px;
+  }
+  .xyle-why-section {
+    padding: 52px 16px;
+  }
+  .xyle-why-head h2 {
+    font-size: 28px;
+  }
+  .xyle-why-head p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .xyle-why-card {
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .xyle-why-cta .button {
+    text-align: center;
+    width: 100%;
   }
   /* Collapse 3-column inline grids */
   div[style*="grid-template-columns:repeat(3"] {
