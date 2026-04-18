@@ -712,5 +712,68 @@
       src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/js/webflow.97c622cc2.js"
       type="text/javascript"
     ></script>
+    <script>
+      (function () {
+        function initAccordions() {
+          var headers = document.querySelectorAll('.accordion-header');
+          headers.forEach(function (header) {
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', function () {
+              var item = header.parentElement;
+              var content = item.querySelector('.accordion-content');
+              var isOpen = content._open;
+
+              // Close all open panels
+              document.querySelectorAll('.accordion-content').forEach(function (c) {
+                if (c._open) {
+                  c._open = false;
+                  c.style.transition = 'height 0.3s ease';
+                  c.style.height = c.scrollHeight + 'px';
+                  requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                      c.style.height = '0px';
+                    });
+                  });
+                  c.addEventListener('transitionend', function onClose() {
+                    c.removeEventListener('transitionend', onClose);
+                    if (!c._open) { c.style.display = 'none'; c.style.height = ''; }
+                  });
+                  // Remove active class from header
+                  var hdr = c.parentElement.querySelector('.accordion-header');
+                  if (hdr) hdr.classList.remove('accordion-active');
+                }
+              });
+
+              if (!isOpen) {
+                content._open = true;
+                content.style.display = 'block';
+                content.style.overflow = 'hidden';
+                content.style.height = '0px';
+                content.style.transition = 'height 0.35s ease';
+                var target = content.scrollHeight;
+                requestAnimationFrame(function () {
+                  requestAnimationFrame(function () {
+                    content.style.height = target + 'px';
+                  });
+                });
+                content.addEventListener('transitionend', function onOpen() {
+                  content.removeEventListener('transitionend', onOpen);
+                  if (content._open) { content.style.height = 'auto'; content.style.overflow = ''; }
+                });
+                header.classList.add('accordion-active');
+              } else {
+                header.classList.remove('accordion-active');
+              }
+            });
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAccordions);
+        } else {
+          initAccordions();
+        }
+      })();
+    </script>
   </body>
 </html>
