@@ -95,3 +95,67 @@
     max-width: 200px !important;
   }
 }
+
+/* ===== SERVER MARKETPLACE SPEC GRID ===== */
+.sm-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 18px 0 14px;
+}
+.sm-spec {
+  background: #f0f4ff;
+  border-radius: 10px;
+  padding: 11px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.sm-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #6b7a9e;
+}
+.sm-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+.sm-value.sm-green {
+  color: #1a9e5c;
+}
+.sm-value.sm-price {
+  color: #1a2eb8;
+  font-size: 15px;
+}
+.sm-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.sm-badge {
+  background: #e8edff;
+  color: #1a2eb8;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+}
+.sm-badge.sm-stock {
+  background: #d6f5e8;
+  color: #1a9e5c;
+}
+
+@media (max-width: 768px) {
+  .sm-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .sm-spec-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
