@@ -6,7 +6,7 @@ A static website for Xyle Hosting (formerly Surf Hosting), a provider of hosting
 ## Tech Stack
 - **Frontend**: Plain HTML5, CSS, JavaScript (no build step)
 - **Design**: Exported from Webflow, heavily customized
-- **Animations**: Lottie
+- **Animations**: Lottie (some JSON files may be 403 from Webflow CDN)
 - **Fonts**: Space Grotesk, IBM Plex Mono (Google Fonts via WebFont.js)
 - **External services**: billing.xyle.host, panel.xyle.host, status.xyle.host, discord.gg/xylehosting
 
@@ -19,6 +19,7 @@ A static website for Xyle Hosting (formerly Surf Hosting), a provider of hosting
 ├── company.html                # About Us page (custom)
 ├── blog.html                   # Blog listing page (custom)
 ├── datacenter.html             # Data Centers page (custom)
+├── custom.css                  # Global custom styles (logo, responsive)
 ├── category/
 │   ├── discord-bot.html        # Discord bot hosting plans
 │   ├── essential-vps.html      # VPS hosting plans
@@ -28,18 +29,20 @@ A static website for Xyle Hosting (formerly Surf Hosting), a provider of hosting
 ```
 
 ## Branding
-- **Logo**: Dark blue (#1a2eb8) pill with white "X" box + "XyleHosting" in white text
-  - The pill design was chosen to guarantee visibility on both light and dark nav backgrounds
-  - Footer logo: separate span-based design (white text on dark footer bg)
+- **Logo**: Inline SVG — dark blue (#1a2eb8) rounded square with white X cross + "Xyle" (#1a2eb8) + "Hosting" (#3959ff) text
+  - Footer logo: same SVG icon (#3959ff) + white text
+  - Fully self-hosted, no CDN dependency
 - **Primary blue**: #3959ff | **Dark blue**: #1a2eb8 | **Dark navy**: #0d1b2a
 - **Discord**: discord.gg/xylehosting
 
 ## Key Implementation Notes
+- `custom.css` included on all pages — handles logo sizing and mobile responsiveness
 - Webflow CSS loaded from CDN: `surf-hosting.webflow.b4719a4e3.min.css` (NOT renamed)
-- Webflow CSS injects `color` inheritance on `.w-nav-brand` — nav logo MUST use background-based design (pill) to be visible; plain text spans get overridden
-- Custom pages (blog, datacenter): use Webflow CSS classes but inline styles for custom sections
+- Webflow CDN blocks some assets (403) — specifically SVGs with IDs like `661bfcfd7a14900ef3a20f5[3-6]` and `661bfcfd7a14900ef3a20f5[0,4]`. These are replaced with inline SVGs in custom pages.
+- Working CDN assets: IDs starting `6620...` (social icons), `661bfcfd7a14900ef3a20f[1-2]...` (Boxicons), `661bfcfd7a14900ef3a20f0b/...` (category/plan icons)
+- Custom pages (blog, datacenter, company): light theme (#f0f4ff cards) with dark text to match Webflow's overall light design
+- Promo banner removed from all pages
 - `data-w-id` on navbar div needed for Webflow JS to properly initialize nav interactions
-- Body background: light gray (Webflow default) — white/transparent text invisible; use dark solid backgrounds
 
 ## Development
 - Served via Python's built-in HTTP server on port 5000
