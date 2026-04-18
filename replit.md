@@ -14,7 +14,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 ## Project Structure
 ```
 .
-├── index.html                  # Main landing page (with tabbed pricing overview)
+├── index.html                  # Main landing page
 ├── products.html               # Product lineup overview
 ├── server-marketplace.html     # Dedicated servers marketplace
 ├── company.html                # About Us page (custom)
@@ -62,13 +62,6 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 - **Web Hosting plans**: Starter ($3.99), Deluxe ($4.99), Business ($7.99)
 - **Discord Bot plans**: 512MB ($4.50/qtr), 1GB ($9/qtr)
 - Color theme: blues (#1a2eb8/#3959ff), no dark/black backgrounds — light card design throughout
-
-## Pricing Overview Section (index.html#pricing-overview)
-- Tabbed section with 4 categories: Minecraft ⛏️, VPS Hosting 🖥️, Web Hosting 🌐, Discord Bot 🤖
-- Tab colors: mc/vps = #3959ff, web = #059669 (green), discord = #5865F2 (purple)
-- Cards match exactly what's shown on category pages — same hardware chips, pricing, features
-- Section uses standalone styling (no Webflow class inheritance) to prevent layout conflicts
-- `plans.css` loaded in `<head>` (not inline) for proper rendering
 
 ## SEO
 - All 10 pages have: keyword-rich `<title>` + `<meta description>`, Open Graph + Twitter cards, canonical URLs, robots meta, JSON-LD structured data
