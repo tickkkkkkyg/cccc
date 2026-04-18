@@ -83,7 +83,316 @@
         hideDecimalForWholeNumbers: false,
       };
     </script>
-  <link href="/custom.css" rel="stylesheet" type="text/css"/></head>
+    <link href="/custom.css" rel="stylesheet" type="text/css"/>
+    <style>
+      /* ── Plan Filter System ── */
+      .mc-filter-wrap {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto 48px;
+      }
+
+      /* Plan type tabs */
+      .mc-plan-tabs {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+      .mc-plan-tab {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        padding: 10px 28px;
+        border-radius: 8px;
+        border: 2px solid #2a3a6e;
+        background: transparent;
+        color: #adc8ff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        letter-spacing: 0.2px;
+      }
+      .mc-plan-tab:hover {
+        background: rgba(57, 89, 255, 0.15);
+        border-color: #3959ff;
+        color: #fff;
+      }
+      .mc-plan-tab.active {
+        background: #3959ff;
+        border-color: #3959ff;
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(57, 89, 255, 0.35);
+      }
+      .mc-plan-tab .tab-icon {
+        margin-right: 7px;
+        font-size: 16px;
+      }
+
+      /* Location buttons */
+      .mc-location-bar {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+      .mc-loc-btn {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 7px 18px;
+        border-radius: 6px;
+        border: 1.5px solid #2a3a6e;
+        background: rgba(13, 27, 42, 0.6);
+        color: #8aa4cc;
+        cursor: pointer;
+        transition: all 0.18s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .mc-loc-btn:hover {
+        border-color: #3959ff;
+        color: #c8d8ff;
+        background: rgba(57, 89, 255, 0.1);
+      }
+      .mc-loc-btn.active {
+        border-color: #3959ff;
+        background: rgba(57, 89, 255, 0.18);
+        color: #fff;
+        font-weight: 600;
+      }
+      .mc-loc-btn .flag {
+        font-size: 15px;
+        line-height: 1;
+      }
+
+      /* Section label above plans */
+      .mc-section-label {
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .mc-section-label h2 {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 6px;
+      }
+      .mc-section-label p {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 14px;
+        color: #7a94c0;
+        margin: 0;
+      }
+
+      /* Plan cards grid */
+      .mc-plans-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .mc-plan-card {
+        background: #0d1b2a;
+        border: 1.5px solid #1e2f4d;
+        border-radius: 16px;
+        padding: 28px 24px 24px;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 0.2s, transform 0.2s;
+        position: relative;
+      }
+      .mc-plan-card:hover {
+        border-color: #3959ff;
+        transform: translateY(-3px);
+      }
+      .mc-plan-card.hidden {
+        display: none;
+      }
+
+      /* Badge */
+      .mc-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 14px;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+      }
+      .mc-badge.popular { background: #f5a623; color: #0d1b2a; }
+      .mc-badge.best-value { background: #22c55e; color: #0d1b2a; }
+      .mc-badge.sale { background: #ef4444; color: #fff; }
+      .mc-badge.new { background: #8b5cf6; color: #fff; }
+
+      /* Card header */
+      .mc-card-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 16px;
+      }
+      .mc-card-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+      .mc-card-title {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        line-height: 1.2;
+      }
+      .mc-card-subtitle {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: #3959ff;
+        font-weight: 500;
+        margin: 2px 0 0;
+        letter-spacing: 0.3px;
+      }
+
+      /* Pricing */
+      .mc-card-price {
+        margin-bottom: 6px;
+      }
+      .mc-price-main {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+      }
+      .mc-price-main span {
+        font-size: 16px;
+        color: #7a94c0;
+        font-weight: 500;
+      }
+      .mc-price-old {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 14px;
+        color: #ef4444;
+        text-decoration: line-through;
+        margin-left: 8px;
+      }
+      .mc-price-note {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 11px;
+        color: #7a94c0;
+        margin-bottom: 14px;
+      }
+
+      /* Location tags */
+      .mc-loc-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-bottom: 16px;
+      }
+      .mc-loc-tag {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 10px;
+        font-weight: 500;
+        padding: 3px 9px;
+        border-radius: 4px;
+        background: rgba(57, 89, 255, 0.12);
+        border: 1px solid rgba(57, 89, 255, 0.25);
+        color: #adc8ff;
+        letter-spacing: 0.2px;
+      }
+
+      /* Divider */
+      .mc-divider {
+        height: 1px;
+        background: #1e2f4d;
+        margin: 14px 0;
+      }
+
+      /* Features */
+      .mc-features-title {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+        color: #7a94c0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin-bottom: 10px;
+      }
+      .mc-feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        margin-bottom: 8px;
+      }
+      .mc-feature-check {
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .mc-feature-text {
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 13px;
+        color: #c8d8ff;
+        line-height: 1.4;
+      }
+
+      /* CTA button */
+      .mc-cta-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        background: #3959ff;
+        border: none;
+        border-radius: 8px;
+        padding: 12px 0;
+        margin-top: auto;
+        text-decoration: none;
+        transition: background 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+      }
+      .mc-cta-btn:hover {
+        background: #1a2eb8;
+        box-shadow: 0 4px 18px rgba(57, 89, 255, 0.45);
+        color: #fff;
+      }
+
+      /* No results message */
+      .mc-no-results {
+        text-align: center;
+        padding: 60px 20px;
+        color: #7a94c0;
+        font-family: 'Space Grotesk', Arial, sans-serif;
+        font-size: 15px;
+        display: none;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .mc-no-results.visible { display: block; }
+      .mc-no-results svg { margin-bottom: 14px; opacity: 0.5; }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .mc-plan-tab { font-size: 13px; padding: 9px 18px; }
+        .mc-plans-grid { grid-template-columns: 1fr; }
+        .mc-price-main { font-size: 26px; }
+      }
+    </style>
+  </head>
   <body>
     <div
       data-w-id="9c896d19-12ed-148e-4e5a-1c014986d7c2"
@@ -137,6 +446,7 @@
         </div>
       </div>
     </div>
+
     <section class="section-top">
       <div style="opacity: 0" class="content">
         <div class="block-top">
@@ -145,85 +455,30 @@
             id="w-node-_835321a8-7e1a-8af1-9eeb-3e8acb13112d-f3a20ee9"
             href="/server-marketplace.html"
             class="button w-button"
-            >View Server Marketplace</a
+            >View Server Marketplace</a
           >
           <div class="block-categories">
             <div class="collection-list-wrapper-categories w-dyn-list">
               <div role="list" class="collection-list-categories w-dyn-items">
-                <div
-                  role="listitem"
-                  class="collection-item-categories w-dyn-item"
-                >
-                  <a
-                    href="/category/minecraft.html"
-                    aria-current="page"
-                    class="link-category w-inline-block w--current"
-                    ><img
-                      alt="Minecraft"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba3b65cbb7282a97fcd22_mc.png"
-                      class="icon-category"
-                    />
-                    <div class="text-category">Minecraft</div></a
-                  >
+                <div role="listitem" class="collection-item-categories w-dyn-item">
+                  <a href="/category/minecraft.html" aria-current="page" class="link-category w-inline-block w--current"
+                    ><img alt="Minecraft" loading="eager" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba3b65cbb7282a97fcd22_mc.png" class="icon-category" />
+                    <div class="text-category">Minecraft</div></a>
                 </div>
-                <div
-                  role="listitem"
-                  class="collection-item-categories w-dyn-item"
-                >
-                  <a
-                    href="/category/web-hosting.html"
-                    class="link-category w-inline-block"
-                    ><img
-                      alt="Web Hosting"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba3a5b9db77bedb74feca_web.png"
-                      class="icon-category"
-                    />
-                    <div class="text-category">Web Hosting</div></a
-                  >
+                <div role="listitem" class="collection-item-categories w-dyn-item">
+                  <a href="/category/web-hosting.html" class="link-category w-inline-block"
+                    ><img alt="Web Hosting" loading="eager" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba3a5b9db77bedb74feca_web.png" class="icon-category" />
+                    <div class="text-category">Web Hosting</div></a>
                 </div>
-                <div
-                  role="listitem"
-                  class="collection-item-categories w-dyn-item"
-                >
-                  <a
-                    href="/category/essential-vps.html"
-                    class="link-category w-inline-block"
-                    ><img
-                      alt="VPS Hosting"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba36d771d918bbf9bc7ec_vps%20(2).png"
-                      sizes="(max-width: 479px) 24.46875px, 27.1875px"
-                      srcset="
-                        https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba36d771d918bbf9bc7ec_vps%20(2)-p-500.png 500w,
-                        https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba36d771d918bbf9bc7ec_vps%20(2).png       512w
-                      "
-                      class="icon-category"
-                    />
-                    <div class="text-category">VPS Hosting</div></a
-                  >
+                <div role="listitem" class="collection-item-categories w-dyn-item">
+                  <a href="/category/essential-vps.html" class="link-category w-inline-block"
+                    ><img alt="VPS Hosting" loading="eager" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba36d771d918bbf9bc7ec_vps%20(2).png" class="icon-category" />
+                    <div class="text-category">VPS Hosting</div></a>
                 </div>
-                <div
-                  role="listitem"
-                  class="collection-item-categories w-dyn-item"
-                >
-                  <a
-                    href="/category/discord-bot.html"
-                    class="link-category w-inline-block"
-                    ><img
-                      alt="Discord Bot"
-                      loading="eager"
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba327ffbb1554be04a064_robot.png"
-                      sizes="(max-width: 479px) 24.46875px, 27.1875px"
-                      srcset="
-                        https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba327ffbb1554be04a064_robot-p-500.png 500w,
-                        https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba327ffbb1554be04a064_robot.png       512w
-                      "
-                      class="icon-category"
-                    />
-                    <div class="text-category">Discord Bot</div></a
-                  >
+                <div role="listitem" class="collection-item-categories w-dyn-item">
+                  <a href="/category/discord-bot.html" class="link-category w-inline-block"
+                    ><img alt="Discord Bot" loading="eager" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/666ba327ffbb1554be04a064_robot.png" class="icon-category" />
+                    <div class="text-category">Discord Bot</div></a>
                 </div>
               </div>
             </div>
@@ -231,389 +486,619 @@
         </div>
       </div>
     </section>
+
+    <!-- ══════════════════════════════════════
+         MINECRAFT PLANS SECTION
+    ══════════════════════════════════════ -->
     <section class="section">
       <div style="opacity: 0" class="content">
-        <div class="collection-list-wrapper-shop w-dyn-list">
-          <div role="list" class="collection-list-shop w-dyn-items">
-            <div role="listitem" class="w-dyn-item">
-              <div class="product">
-                <div
-                  data-wf-sku-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22default-sku%3Amain-image%22%3A%7B%22exists%22%3A%22yes%22%2C%22type%22%3A%22ImageRef%22%7D%7D%7D%2C%22timezone%22%3A%22Europe%2FAthens%22%7D"
-                  class="block-icon-product"
-                >
-                  <img
-                    alt="Budget"
-                    loading="eager"
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                    src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial.png"
-                    sizes="100vw"
-                    srcset="
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial-p-500.png 500w,
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial.png       512w
-                    "
-                    class="icon-product"
-                  />
-                </div>
-                <a href="#" class="link-product w-inline-block"
-                  ><h3 class="heading-product">Budget</h3></a
-                >
-                <div class="block-price">
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="text-price"
-                  >
-                    $ 1.00 USD
-                  </div>
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="compare-at-price w-dyn-bind-empty"
-                  ></div>
-                </div>
-                <p class="paragraph-description">
-                  Locations: Chicago, USA - Germany
-                </p>
-                <div class="subtitle-product">Features<br /></div>
-                <div class="block-features-product">
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Intel Xeon Gold 5412U
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Customizable DDR5 Memory
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">4 CPU vCores</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">100GB NVMe Storage</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Free Offsite Backups
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">4x Server Splits</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Free MySQL Database
-                    </h6>
-                  </div>
-                </div>
-                <a
-                  href="https://billing.xyle.host/store/minecraft-hosting/budget"
-                  class="button w-button"
-                  >View Plan</a
-                >
-                <div class="block-tag-product">
-                  <div class="yellow-tag-product">Most popular<br /></div>
-                  <div class="green-tag-product w-condition-invisible">
-                    Best Value<br />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div role="listitem" class="w-dyn-item">
-              <div class="product">
-                <div
-                  data-wf-sku-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22default-sku%3Amain-image%22%3A%7B%22exists%22%3A%22yes%22%2C%22type%22%3A%22ImageRef%22%7D%7D%7D%2C%22timezone%22%3A%22Europe%2FAthens%22%7D"
-                  class="block-icon-product"
-                >
-                  <img
-                    alt="Premium"
-                    loading="eager"
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                    src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium.png"
-                    sizes="100vw"
-                    srcset="
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium-p-500.png 500w,
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium.png       512w
-                    "
-                    class="icon-product"
-                  />
-                </div>
-                <a href="#" class="link-product w-inline-block"
-                  ><h3 class="heading-product">Premium</h3></a
-                >
-                <div class="block-price">
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="text-price"
-                  >
-                    $ 2.25 USD
-                  </div>
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="compare-at-price w-dyn-bind-empty"
-                  ></div>
-                </div>
-                <p class="paragraph-description">
-                  Locations: Miami, USA - New York, USA - Germany
-                </p>
-                <div class="subtitle-product">Features<br /></div>
-                <div class="block-features-product">
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">AMD Ryzen 9 5950X</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Customizable DDR4 Memory
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">4 CPU vCores</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">100GB NVMe Storage</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Free Offsite Backups
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">6x Server Splits</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      3 Free MySQL Databases
-                    </h6>
-                  </div>
-                </div>
-                <a
-                  href="https://billing.xyle.host/store/minecraft-hosting/premium"
-                  class="button w-button"
-                  >View Plan</a
-                >
-                <div class="block-tag-product">
-                  <div class="yellow-tag-product w-condition-invisible">
-                    Most popular<br />
-                  </div>
-                  <div class="green-tag-product w-condition-invisible">
-                    Best Value<br />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div role="listitem" class="w-dyn-item">
-              <div class="product">
-                <div
-                  data-wf-sku-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22default-sku%3Amain-image%22%3A%7B%22exists%22%3A%22yes%22%2C%22type%22%3A%22ImageRef%22%7D%7D%7D%2C%22timezone%22%3A%22Europe%2FAthens%22%7D"
-                  class="block-icon-product"
-                >
-                  <img
-                    alt="Extreme"
-                    loading="eager"
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_main_image_4dr%22%2C%22to%22%3A%22src%22%7D%5D"
-                    src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png"
-                    sizes="100vw"
-                    srcset="
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch-p-500.png 500w,
-                      https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png       512w
-                    "
-                    class="icon-product"
-                  />
-                </div>
-                <a href="#" class="link-product w-inline-block"
-                  ><h3 class="heading-product">Extreme</h3></a
-                >
-                <div class="block-price">
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="text-price"
-                  >
-                    $ 3.00 USD
-                  </div>
-                  <div
-                    data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_compare_at_price_7dr10dr%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="compare-at-price"
-                  >
-                    $ 4.00 USD
-                  </div>
-                </div>
-                <p class="paragraph-description">
-                  Locations: Chicago, USA - Miami, USA - Salt Lake City, USA -
-                  Germany - Sydney, AU - Singapore
-                </p>
-                <div class="subtitle-product">Features<br /></div>
-                <div class="block-features-product">
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">AMD Ryzen 9 9900X</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Customizable DDR5 Memory
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">4 CPU vCores</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Unmetered NVMe Storage
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      Free Offsite Backups
-                    </h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">8x Server Splits</h6>
-                  </div>
-                  <div class="features-product">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f64_bx-check_green.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-features-product"
-                    />
-                    <h6 class="heading-features-product">
-                      5 Free MySQL Databases
-                    </h6>
-                  </div>
-                </div>
-                <a
-                  href="https://billing.xyle.host/store/minecraft-hosting/extreme"
-                  class="button w-button"
-                  >View Plan</a
-                >
-                <div class="block-tag-product">
-                  <div class="yellow-tag-product w-condition-invisible">
-                    Most popular<br />
-                  </div>
-                  <div class="green-tag-product">Best Value<br /></div>
-                </div>
-              </div>
-            </div>
+
+        <div class="mc-filter-wrap">
+
+          <!-- Plan Type Tabs -->
+          <div class="mc-plan-tabs" role="tablist">
+            <button class="mc-plan-tab active" data-tab="intel" role="tab" aria-selected="true">
+              <span class="tab-icon">🔵</span> Intel Plans
+            </button>
+            <button class="mc-plan-tab" data-tab="ryzen" role="tab" aria-selected="false">
+              <span class="tab-icon">🔴</span> Ryzen Plans
+            </button>
+            <button class="mc-plan-tab" data-tab="offer" role="tab" aria-selected="false">
+              <span class="tab-icon">🏷️</span> Offer Plans
+            </button>
           </div>
+
+          <!-- Location Buttons -->
+          <div class="mc-location-bar" id="mc-location-bar">
+            <button class="mc-loc-btn active" data-loc="all">
+              <span class="flag">🌐</span> All Locations
+            </button>
+            <button class="mc-loc-btn" data-loc="chicago">
+              <span class="flag">🇺🇸</span> Chicago, USA
+            </button>
+            <button class="mc-loc-btn" data-loc="miami">
+              <span class="flag">🇺🇸</span> Miami, USA
+            </button>
+            <button class="mc-loc-btn" data-loc="newyork">
+              <span class="flag">🇺🇸</span> New York, USA
+            </button>
+            <button class="mc-loc-btn" data-loc="saltlake">
+              <span class="flag">🇺🇸</span> Salt Lake City, USA
+            </button>
+            <button class="mc-loc-btn" data-loc="germany">
+              <span class="flag">🇩🇪</span> Germany
+            </button>
+            <button class="mc-loc-btn" data-loc="sydney">
+              <span class="flag">🇦🇺</span> Sydney, AU
+            </button>
+            <button class="mc-loc-btn" data-loc="singapore">
+              <span class="flag">🇸🇬</span> Singapore
+            </button>
+          </div>
+
+          <!-- Section Label -->
+          <div class="mc-section-label" id="mc-section-label">
+            <h2 id="mc-label-title">Intel Minecraft Plans</h2>
+            <p id="mc-label-desc">Powered by Intel Xeon Gold — DDR5 ECC Memory — NVMe Storage</p>
+          </div>
+
         </div>
+
+        <!-- Plans Grid -->
+        <div class="mc-plans-grid" id="mc-plans-grid">
+
+          <!-- ═══ INTEL PLANS ═══ -->
+
+          <!-- Intel Starter -->
+          <div class="mc-plan-card" data-plantype="intel" data-locations="chicago,germany">
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial.png" alt="Starter">
+              <div>
+                <div class="mc-card-title">Starter</div>
+                <div class="mc-card-subtitle">INTEL XEON GOLD 5412U</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$0.75 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Intel Xeon Gold 5412U</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2 GB DDR5 ECC Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">50 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free MySQL Database</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/intel-starter" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- Intel Budget -->
+          <div class="mc-plan-card" data-plantype="intel" data-locations="chicago,germany,singapore">
+            <div class="mc-badge popular">Most Popular</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial.png" alt="Budget">
+              <div>
+                <div class="mc-card-title">Budget</div>
+                <div class="mc-card-subtitle">INTEL XEON GOLD 5412U</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$1.00 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+              <span class="mc-loc-tag">🇸🇬 Singapore</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Intel Xeon Gold 5412U</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 GB DDR5 ECC Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">100 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free MySQL Database</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/budget" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- Intel Value -->
+          <div class="mc-plan-card" data-plantype="intel" data-locations="chicago,saltlake,germany">
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium.png" alt="Value">
+              <div>
+                <div class="mc-card-title">Value</div>
+                <div class="mc-card-subtitle">INTEL XEON GOLD 5412U</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$1.50 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇺🇸 Salt Lake City</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Intel Xeon Gold 5412U</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">6 GB DDR5 ECC Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">150 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">5x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2 Free MySQL Databases</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/intel-value" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- Intel Pro -->
+          <div class="mc-plan-card" data-plantype="intel" data-locations="chicago,newyork,saltlake,germany">
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png" alt="Pro">
+              <div>
+                <div class="mc-card-title">Pro</div>
+                <div class="mc-card-subtitle">INTEL XEON GOLD 5412U</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$2.00 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇺🇸 New York</span>
+              <span class="mc-loc-tag">🇺🇸 Salt Lake City</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Intel Xeon Gold 5412U</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8 GB DDR5 ECC Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">6 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">200 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">6x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">3 Free MySQL Databases</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/intel-pro" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- ═══ RYZEN PLANS ═══ -->
+
+          <!-- Ryzen Premium -->
+          <div class="mc-plan-card hidden" data-plantype="ryzen" data-locations="miami,newyork,germany">
+            <div class="mc-badge popular">Most Popular</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium.png" alt="Premium">
+              <div>
+                <div class="mc-card-title">Premium</div>
+                <div class="mc-card-subtitle">AMD RYZEN 9 5950X</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$2.25 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Miami</span>
+              <span class="mc-loc-tag">🇺🇸 New York</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">AMD Ryzen 9 5950X</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 GB DDR4 Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">100 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">6x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">3 Free MySQL Databases</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/premium" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- Ryzen Extreme -->
+          <div class="mc-plan-card hidden" data-plantype="ryzen" data-locations="chicago,miami,saltlake,germany,sydney,singapore">
+            <div class="mc-badge best-value">Best Value</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png" alt="Extreme">
+              <div>
+                <div class="mc-card-title">Extreme</div>
+                <div class="mc-card-subtitle">AMD RYZEN 9 9900X</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$3.00 <span>/ mo</span></span>
+              <span class="mc-price-old">$4.00</span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇺🇸 Miami</span>
+              <span class="mc-loc-tag">🇺🇸 Salt Lake City</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+              <span class="mc-loc-tag">🇦🇺 Sydney</span>
+              <span class="mc-loc-tag">🇸🇬 Singapore</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">AMD Ryzen 9 9900X</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8 GB DDR5 Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Unmetered NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">5 Free MySQL Databases</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/extreme" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- Ryzen Ultra -->
+          <div class="mc-plan-card hidden" data-plantype="ryzen" data-locations="chicago,miami,newyork,saltlake,germany,sydney,singapore">
+            <div class="mc-badge new">New</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png" alt="Ultra">
+              <div>
+                <div class="mc-card-title">Ultra</div>
+                <div class="mc-card-subtitle">AMD RYZEN 9 9950X</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$4.50 <span>/ mo</span></span>
+            </div>
+            <div class="mc-price-note">Billed monthly • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇺🇸 Miami</span>
+              <span class="mc-loc-tag">🇺🇸 New York</span>
+              <span class="mc-loc-tag">🇺🇸 Salt Lake City</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+              <span class="mc-loc-tag">🇦🇺 Sydney</span>
+              <span class="mc-loc-tag">🇸🇬 Singapore</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">AMD Ryzen 9 9950X</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">16 GB DDR5 Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Unmetered NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">10x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">10 Free MySQL Databases</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Dedicated IP Address</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/ultra" class="mc-cta-btn">Order Now</a>
+          </div>
+
+          <!-- ═══ OFFER PLANS ═══ -->
+
+          <!-- Offer: Flash Intel -->
+          <div class="mc-plan-card hidden" data-plantype="offer" data-locations="chicago,germany">
+            <div class="mc-badge sale">🔥 Flash Sale</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626ce28d640d668b58cd490_financial.png" alt="Flash Intel">
+              <div>
+                <div class="mc-card-title">Flash Intel</div>
+                <div class="mc-card-subtitle">INTEL XEON GOLD 5412U</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$0.50 <span>/ mo</span></span>
+              <span class="mc-price-old">$0.75</span>
+            </div>
+            <div class="mc-price-note">Limited time offer • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Intel Xeon Gold 5412U</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2 GB DDR5 ECC Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">50 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">2x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">33% Off First Month</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/flash-intel" class="mc-cta-btn">Claim Offer</a>
+          </div>
+
+          <!-- Offer: Flash Ryzen -->
+          <div class="mc-plan-card hidden" data-plantype="offer" data-locations="miami,germany">
+            <div class="mc-badge sale">🔥 Flash Sale</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626c378587410893dfddb31_premium.png" alt="Flash Ryzen">
+              <div>
+                <div class="mc-card-title">Flash Ryzen</div>
+                <div class="mc-card-subtitle">AMD RYZEN 9 5950X</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$1.75 <span>/ mo</span></span>
+              <span class="mc-price-old">$2.25</span>
+            </div>
+            <div class="mc-price-note">Limited time offer • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Miami</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">AMD Ryzen 9 5950X</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 GB DDR4 Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">100 GB NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">6x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">22% Off First Month</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/flash-ryzen" class="mc-cta-btn">Claim Offer</a>
+          </div>
+
+          <!-- Offer: Bundle Deal -->
+          <div class="mc-plan-card hidden" data-plantype="offer" data-locations="chicago,miami,newyork,saltlake,germany,sydney,singapore">
+            <div class="mc-badge popular">Bundle Deal</div>
+            <div class="mc-card-header">
+              <img class="mc-card-icon" src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20f0b/6626cef7f0d9477fe6753891_punch.png" alt="Bundle Deal">
+              <div>
+                <div class="mc-card-title">Bundle Deal</div>
+                <div class="mc-card-subtitle">AMD RYZEN 9 9900X</div>
+              </div>
+            </div>
+            <div class="mc-card-price">
+              <span class="mc-price-main">$2.50 <span>/ mo</span></span>
+              <span class="mc-price-old">$3.00</span>
+            </div>
+            <div class="mc-price-note">Limited time offer • USD</div>
+            <div class="mc-loc-tags">
+              <span class="mc-loc-tag">🇺🇸 Chicago</span>
+              <span class="mc-loc-tag">🇺🇸 Miami</span>
+              <span class="mc-loc-tag">🇺🇸 New York</span>
+              <span class="mc-loc-tag">🇺🇸 Salt Lake City</span>
+              <span class="mc-loc-tag">🇩🇪 Germany</span>
+              <span class="mc-loc-tag">🇦🇺 Sydney</span>
+              <span class="mc-loc-tag">🇸🇬 Singapore</span>
+            </div>
+            <div class="mc-divider"></div>
+            <div class="mc-features-title">Features</div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">AMD Ryzen 9 9900X</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8 GB DDR5 Memory</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">4 CPU vCores</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Unmetered NVMe Storage</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">Free Offsite Backups</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">8x Server Splits</span>
+            </div>
+            <div class="mc-feature-item">
+              <svg class="mc-feature-check" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#22c55e" fill-opacity="0.15"/><path d="M4.5 8.5L7 11L11.5 5.5" stroke="#22c55e" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="mc-feature-text">17% Off — Limited Time</span>
+            </div>
+            <div class="mc-divider"></div>
+            <a href="https://billing.xyle.host/store/minecraft-hosting/bundle" class="mc-cta-btn">Claim Offer</a>
+          </div>
+
+        </div>
+
+        <!-- No results message -->
+        <div class="mc-no-results" id="mc-no-results">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="#3959ff" stroke-width="2" stroke-opacity="0.4"/>
+            <path d="M16 24h16M24 16v16" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.4" transform="rotate(45 24 24)"/>
+          </svg>
+          <p>No plans available for this location in the selected category.<br>Try a different location or plan type.</p>
+        </div>
+
       </div>
     </section>
+
     <section class="section">
       <div class="content">
         <div class="w-layout-grid grid-banner">
@@ -696,6 +1181,7 @@
         </div>
       </div>
     </section>
+
     <section class="section-footer">
       <div class="content">
         <div class="w-layout-grid grid-footer">
@@ -703,44 +1189,17 @@
             id="w-node-d0458a27-e73f-e612-462d-65302581b228-2581b225"
             class="block-footer"
           >
-            <span style="display:inline-flex;align-items:center;gap:9px;margin-bottom:6px;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="32" height="32" rx="8" fill="#3959ff"/><path d="M10 10L16 16M16 16L22 22M16 16L22 10M16 16L10 22" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.5px;white-space:nowrap;">Xyle<span style="color:#adc8ff;">Hosting</span></span></span></span></span>
+            <span style="display:inline-flex;align-items:center;gap:9px;margin-bottom:6px;"><svg width="30" height="30" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;"><rect width="32" height="32" rx="8" fill="#3959ff"/><path d="M10 10L16 16M16 16L22 22M16 16L22 10M16 16L10 22" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.5px;white-space:nowrap;">Xyle<span style="color:#adc8ff;">Hosting</span></span></span>
             <div class="paragraph-footer">
               Fast, Reliable, Secure - Your Project Deserves the Best Hosting<br />
             </div>
             <div class="block-social">
-              <a
-                href="https://discord.gg/xylehosting"
-                target="_blank"
-                class="social-link w-inline-block"
-                ><img
-                  src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204dd681dcca70c1267210_discord.png"
-                  loading="eager"
-                  alt=""
-                  class="icon-social" /></a
-              ><a
-                href="https://www.linkedin.com/company/xylehosting"
-                target="_blank"
-                class="social-link w-inline-block"
-                ><img
-                  src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e1bb3c08ac7bb2e11fa_linkedin.png"
-                  loading="eager"
-                  alt=""
-                  class="icon-social" /></a
-              ><a
-                href="https://twitter.com/xylehosting"
-                target="_blank"
-                class="social-link w-inline-block"
-                ><img
-                  src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e4f289826e76c5dcc9f_twitter.png"
-                  loading="eager"
-                  sizes="24px"
-                  srcset="
-                    https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e4f289826e76c5dcc9f_twitter-p-500.png 500w,
-                    https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e4f289826e76c5dcc9f_twitter.png       512w
-                  "
-                  alt=""
-                  class="icon-social"
-              /></a>
+              <a href="https://discord.gg/xylehosting" target="_blank" class="social-link w-inline-block"
+                ><img src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204dd681dcca70c1267210_discord.png" loading="eager" alt="" class="icon-social" /></a
+              ><a href="https://www.linkedin.com/company/xylehosting" target="_blank" class="social-link w-inline-block"
+                ><img src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e1bb3c08ac7bb2e11fa_linkedin.png" loading="eager" alt="" class="icon-social" /></a
+              ><a href="https://twitter.com/xylehosting" target="_blank" class="social-link w-inline-block"
+                ><img src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e4f289826e76c5dcc9f_twitter.png" loading="eager" alt="" class="icon-social" /></a>
             </div>
           </div>
           <div
@@ -748,21 +1207,10 @@
             class="block-footer"
           >
             <div class="subtitle-footer">Solutions<br /></div>
-            <a
-              href="/category/minecraft.html"
-              class="link-footer"
-              >Minecraft</a
-            ><a
-              href="/category/web-hosting.html"
-              class="link-footer"
-              >Website Hosting</a
-            ><a
-              href="/category/essential-vps.html"
-              class="link-footer"
-              >VPS Hosting</a
-            ><a href="/server-marketplace.html" class="link-footer"
-              >Dedicated Servers</a
-            >
+            <a href="/category/minecraft.html" class="link-footer">Minecraft</a
+            ><a href="/category/web-hosting.html" class="link-footer">Website Hosting</a
+            ><a href="/category/essential-vps.html" class="link-footer">VPS Hosting</a
+            ><a href="/server-marketplace.html" class="link-footer">Dedicated Servers</a>
           </div>
           <div
             id="w-node-d0458a27-e73f-e612-462d-65302581b24c-2581b225"
@@ -786,11 +1234,12 @@
         <div class="block-footer-down">
           <div class="text-footer-down">
             All rights reserved. Xyle Hosting, llc
-            | Registration: l24000084227<br />
+            | Registration: l24000084227<br />
           </div>
         </div>
       </div>
     </section>
+
     <script
       src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=661bfcfd7a14900ef3a20e61"
       type="text/javascript"
@@ -801,5 +1250,93 @@
       src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/js/webflow.97c622cc2.js"
       type="text/javascript"
     ></script>
+
+    <script>
+      (function () {
+        var currentTab = 'intel';
+        var currentLoc = 'all';
+
+        var labelData = {
+          intel: {
+            title: 'Intel Minecraft Plans',
+            desc: 'Powered by Intel Xeon Gold — DDR5 ECC Memory — NVMe Storage'
+          },
+          ryzen: {
+            title: 'Ryzen Minecraft Plans',
+            desc: 'Powered by AMD Ryzen 9 — High-Clock Gaming Performance — NVMe Storage'
+          },
+          offer: {
+            title: 'Special Offer Plans',
+            desc: 'Limited-time deals — Discounted pricing on top hardware'
+          }
+        };
+
+        function applyFilter() {
+          var cards = document.querySelectorAll('.mc-plan-card');
+          var visibleCount = 0;
+
+          cards.forEach(function (card) {
+            var plantype = card.getAttribute('data-plantype');
+            var locations = card.getAttribute('data-locations').split(',');
+
+            var typeMatch = plantype === currentTab;
+            var locMatch = currentLoc === 'all' || locations.indexOf(currentLoc) !== -1;
+
+            if (typeMatch && locMatch) {
+              card.classList.remove('hidden');
+              visibleCount++;
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          var noResults = document.getElementById('mc-no-results');
+          if (visibleCount === 0) {
+            noResults.classList.add('visible');
+          } else {
+            noResults.classList.remove('visible');
+          }
+
+          var label = labelData[currentTab];
+          document.getElementById('mc-label-title').textContent = label.title;
+          document.getElementById('mc-label-desc').textContent = label.desc;
+        }
+
+        // Plan type tab clicks
+        document.querySelectorAll('.mc-plan-tab').forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            document.querySelectorAll('.mc-plan-tab').forEach(function (t) {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+            currentTab = tab.getAttribute('data-tab');
+            currentLoc = 'all';
+            // Reset location buttons
+            document.querySelectorAll('.mc-loc-btn').forEach(function (b) {
+              b.classList.remove('active');
+            });
+            document.querySelector('.mc-loc-btn[data-loc="all"]').classList.add('active');
+            applyFilter();
+          });
+        });
+
+        // Location button clicks
+        document.querySelectorAll('.mc-loc-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            document.querySelectorAll('.mc-loc-btn').forEach(function (b) {
+              b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            currentLoc = btn.getAttribute('data-loc');
+            applyFilter();
+          });
+        });
+
+        // Init
+        applyFilter();
+      })();
+    </script>
   </body>
 </html>
