@@ -1,0 +1,97 @@
+/* ===== LOGO SIZE BOOST (colors set inline, just enforce size) ===== */
+.brand.w-nav-brand > span {
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.5px !important;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 991px) {
+  .nav-block {
+    padding: 0 20px !important;
+  }
+  .brand.w-nav-brand > span {
+    font-size: 18px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Webflow built-in grid */
+  .w-layout-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Padding reductions */
+  .section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .content {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  /* Hero heading size */
+  .heading-hero {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+  }
+  /* Pricing card padding */
+  .card-plan {
+    padding: 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand.w-nav-brand > span {
+    font-size: 16px !important;
+  }
+  /* Collapse 3-column inline grids */
+  div[style*="grid-template-columns:repeat(3"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  div[style*="grid-template-columns: repeat(3"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  div[style*="grid-template-columns:1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  div[style*="grid-template-columns: 1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  /* Featured post: collapse side-by-side layout */
+  div[style*="grid-template-columns:1fr auto"] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  /* Hide the featured post image on very small screens */
+  div[style*="width:200px;height:200px"] {
+    display: none !important;
+  }
+  /* Reduce oversized padding blocks */
+  div[style*="padding:48px"] {
+    padding: 24px !important;
+  }
+  div[style*="padding: 48px"] {
+    padding: 24px !important;
+  }
+  div[style*="padding:40px 48px"] {
+    padding: 24px !important;
+    flex-direction: column !important;
+  }
+  /* Map height reduction */
+  div[style*="height:400px"] {
+    height: 220px !important;
+  }
+  div[style*="height: 400px"] {
+    height: 220px !important;
+  }
+  /* Company founder image */
+  div[style*="width:200px"] {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
+}
