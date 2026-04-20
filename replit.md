@@ -9,7 +9,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 - **Animations**: Lottie (some JSON files may be 403 from Webflow CDN)
 - **Fonts**: Space Grotesk, IBM Plex Mono (Google Fonts via WebFont.js)
 - **External services**: billing.xyle.host, panel.xyle.host, status.xyle.host, discord.gg/xylehosting
-- **Social**: Instagram @pushkar_xyle
+- **Social**: Instagram @xylehosting
 
 ## Project Structure
 ```
@@ -37,7 +37,7 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
   - Footer logo: same SVG icon (#3959ff) + white text
   - Fully self-hosted, no CDN dependency
 - **Primary blue**: #3959ff | **Dark blue**: #1a2eb8 | **Dark navy**: #0d1b2a
-- **Discord**: discord.gg/xylehosting | **Instagram**: @pushkar_xyle
+- **Discord**: discord.gg/xylehosting | **Instagram**: @xylehosting
 
 ## Key Implementation Notes
 - `custom.css` + `category/plans.css` included on all pages — handles logo sizing, mobile responsiveness, and plan card styles
