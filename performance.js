@@ -25,7 +25,7 @@
     loader.innerHTML = [
       '<div class="xy-skeleton-wrap">',
       '<div class="xy-loader-brand">',
-      '<div class="xy-loader-logo"><span></span></div>',
+      '<div class="xy-loader-logo"><img src="/logo.webp" alt="XyleHosting" style="width:46px;height:46px;object-fit:contain;border-radius:10px;display:block;"/></div>',
       '<div class="xy-loader-copy">',
       '<strong>Loading XyleHosting</strong>',
       '<em>Preparing a smooth experience</em>',
