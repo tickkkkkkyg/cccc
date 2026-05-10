@@ -1,0 +1,259 @@
+Here is your full copy-paste XyleHosting VPS plans (Nepal + Germany + Singapore):
+
+
+---
+
+🇳🇵 Nepal KVM VPS (Intel® Xeon Gold)
+
+Nepal Starter — $4.49/month
+1 vCPU
+4 GB RAM
+40 GB NVMe SSD
+5 TB Traffic
+Intel® Xeon Gold
+KVM Virtualization
+Nepal Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Nepal Basic — $6.99/month
+2 vCPU
+6 GB RAM
+60 GB NVMe SSD
+10 TB Traffic
+Intel® Xeon Gold
+KVM Virtualization
+Nepal Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Nepal Standard — $8.99/month
+2 vCPU
+6 GB RAM
+80 GB NVMe SSD
+12 TB Traffic
+Intel® Xeon Gold
+KVM Virtualization
+Nepal Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Nepal Pro — $9.99/month
+4 vCPU
+8 GB RAM
+80 GB NVMe SSD
+15 TB Traffic
+Intel® Xeon Gold
+KVM Virtualization
+Nepal Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+
+---
+
+🇩🇪 Germany KVM VPS (Xeon E5 Series)
+
+Germany Starter — $2.99/month
+1 vCPU
+4 GB RAM
+40 GB NVMe SSD
+5 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Germany Basic — $4.99/month
+2 vCPU
+6 GB RAM
+60 GB NVMe SSD
+10 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Germany Standard — $6.99/month
+4 vCPU
+12 GB RAM
+100 GB NVMe SSD
+15 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Germany Pro — $10.99/month
+6 vCPU
+24 GB RAM
+200 GB NVMe SSD
+20 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Germany Business — $16.99/month
+8 vCPU
+32 GB RAM
+300 GB NVMe SSD
+30 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Germany Enterprise — $29.99/month
+12 vCPU
+64 GB RAM
+500 GB NVMe SSD
+40 TB Traffic
+Intel® Xeon E5-2697 v2
+KVM Virtualization
+Frankfurt, Germany
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+
+---
+
+🇸🇬 Singapore KVM VPS (Mixed CPU Nodes)
+
+Singapore Starter — $3.99/month
+1 vCPU
+4 GB RAM
+40 GB NVMe SSD
+5 TB Traffic
+Intel Xeon E5 / Shared Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Singapore Basic — $5.99/month
+2 vCPU
+6 GB RAM
+60 GB NVMe SSD
+10 TB Traffic
+Intel Xeon Gold / Cloud Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Singapore Standard — $8.99/month
+4 vCPU
+12 GB RAM
+100 GB NVMe SSD
+15 TB Traffic
+AMD EPYC / High Performance Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Singapore Pro — $14.99/month
+6 vCPU
+24 GB RAM
+200 GB NVMe SSD
+20 TB Traffic
+Intel Xeon Gold / Premium Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Singapore Business — $21.99/month
+8 vCPU
+32 GB RAM
+300 GB NVMe SSD
+30 TB Traffic
+AMD EPYC / Enterprise Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+Singapore Enterprise — $39.99/month
+12 vCPU
+64 GB RAM
+500 GB NVMe SSD
+40 TB Traffic
+Intel Xeon Platinum / High-End Node
+KVM Virtualization
+Singapore Datacenter
+1 Gbps Uplink
+DDoS Protection
+1 IPv4 Address
+/64 IPv6 Subnet
+Full Root Access
+Instant Provisioning
+
+
+---

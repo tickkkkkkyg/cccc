@@ -121,7 +121,10 @@
     offer:   { title: 'Special Offer Plans',          sub: 'Limited-time discounts on top-tier Minecraft hardware' },
     kvm:     { title: 'KVM VPS Plans',               sub: 'Intel Xeon · KVM Virtualization · Full Root Access · SSD Storage' },
     nvme:    { title: 'Ryzen NVMe VPS Plans',        sub: 'AMD Ryzen · Gen4 NVMe · Ultra-Low Latency · Full Root Access' },
-    storage: { title: 'Storage VPS Plans',           sub: 'High-Capacity Storage · RAID-Protected · Ideal for Backups & Media' }
+    storage: { title: 'Storage VPS Plans',           sub: 'High-Capacity Storage · RAID-Protected · Ideal for Backups & Media' },
+    nepal:   { title: 'Nepal Plans',                 sub: 'Intel® Xeon Gold · KVM Virtualization · Nepal Datacenter · DDoS Protected' },
+    germany: { title: 'Germany Plans',               sub: 'Intel® Xeon E5-2697 v2 · KVM Virtualization · Frankfurt, Germany · DDoS Protected' },
+    singapore: { title: 'Singapore Plans',           sub: 'Mixed CPU Nodes · KVM Virtualization · Singapore Datacenter · DDoS Protected' }
   };
 
   var activeTab = (document.querySelector('.xp-tab.active') || {}).dataset && document.querySelector('.xp-tab.active').dataset.tab;
