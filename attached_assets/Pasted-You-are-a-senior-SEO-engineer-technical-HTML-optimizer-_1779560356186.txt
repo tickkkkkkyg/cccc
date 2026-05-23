@@ -1,0 +1,340 @@
+You are a senior SEO engineer, technical HTML optimizer, and hosting industry website architect.
+
+You are working on an EXISTING static HTML website for a hosting company.
+
+Your job is to upgrade this website to match or exceed SEO quality of top hosting companies like VOLYXHOST and GBNodes.
+
+---
+
+🚨 ABSOLUTE RULES (VERY IMPORTANT)
+
+- DO NOT change website design, UI, layout, colors, fonts, spacing, or visual structure.
+- DO NOT redesign pages or modify frontend styling system.
+- DO NOT remove or replace components.
+- DO NOT change branding identity.
+- DO NOT introduce new visual design systems.
+- ALL changes must be invisible to users visually.
+
+---
+
+🎯 MAIN GOAL
+
+Transform this website into a HIGH-PERFORMANCE SEO hosting platform that can rank in Google like top industry hosting companies.
+
+Focus on:
+
+- SEO optimization
+- content improvement
+- HTML structure improvements
+- technical SEO
+- internal linking system
+- trust-building pages
+- blog system
+
+---
+
+📁 1. COMPLETE WEBSITE STRUCTURE (SITEMAP)
+
+Ensure or create the following pages:
+
+Core pages:
+
+- index.html (Home)
+- about.html (Company page)
+- pricing.html
+- contact.html
+- support.html
+- status.html
+
+Hosting service pages:
+
+- minecraft-hosting.html
+- vps-hosting.html
+- game-hosting.html
+- discord-bot-hosting.html
+- fivem-hosting.html
+- dedicated-servers.html
+
+Company trust pages:
+
+- about-us.html
+- partners.html
+- infrastructure.html
+
+Legal pages:
+
+- privacy-policy.html
+- terms-of-service.html
+- refund-policy.html
+- acceptable-use-policy.html
+
+Blog system:
+
+- blog.html
+- blog-post-1.html
+- blog-post-2.html
+- blog-post-3.html
+
+---
+
+🔍 2. SEO OPTIMIZATION SYSTEM (VERY IMPORTANT)
+
+For EVERY page:
+
+Head section improvements:
+
+- Proper SEO <title> optimized for keywords
+- Meta description (155–160 characters)
+- Meta keywords (optional)
+- Open Graph tags:
+  - og:title
+  - og:description
+  - og:image
+  - og:url
+- Twitter card meta tags
+- Canonical URL
+- Favicon
+
+---
+
+Heading structure rules:
+
+- EXACTLY ONE H1 per page
+- Multiple H2 sections
+- H3 inside sections only
+- Proper semantic hierarchy
+
+---
+
+Keyword strategy:
+
+Each page must target ONE main keyword:
+
+Examples:
+
+- minecraft hosting nepal
+- cheap vps hosting india
+- game server hosting low ping
+- discord bot hosting cheap
+- fivem server hosting
+
+Keyword rules:
+
+- Must appear in title
+- Must appear in first 100 words
+- Must appear in one H2
+- Must appear in meta description naturally
+
+---
+
+🧾 3. CONTENT IMPROVEMENT SYSTEM
+
+Only improve TEXT content (not design).
+
+You must:
+
+- Rewrite content to be SEO optimized
+- Improve clarity and professionalism
+- Add missing explanations
+- Expand weak sections
+
+---
+
+Add missing sections where needed:
+
+- Features section
+- Pricing explanation
+- FAQ section
+- Why choose us section
+- Technical specs section
+
+BUT:
+👉 Keep EXACT SAME visual structure and layout style
+
+---
+
+🔗 4. INTERNAL LINKING SYSTEM (VERY IMPORTANT)
+
+Build strong SEO linking:
+
+Navigation flow:
+
+Home → Services → Pricing → Blog → Support
+
+Cross linking rules:
+
+- Minecraft page links to VPS page
+- VPS page links to Game Hosting page
+- Blog links all service pages
+- About page links Infrastructure page
+
+All links must be:
+
+- text-based
+- natural inside content
+- not changing UI design
+
+---
+
+🧠 5. BLOG SEO SYSTEM (TRAFFIC ENGINE)
+
+If blog exists or is missing:
+
+Must include:
+
+- blog.html (listing page)
+- multiple blog posts
+
+Blog post rules:
+
+- 800–1500 words
+- ONE keyword per post
+- H1 + H2 + H3 structure
+- FAQ section included
+- internal links included
+
+Blog topics:
+
+- Best Minecraft Hosting in Nepal
+- How to reduce Minecraft lag
+- VOLYX vs This Hosting Comparison
+- Best VPS for Discord Bots
+- How to setup a Minecraft server
+
+---
+
+⚖️ 6. COMPANY + TRUST PAGES
+
+About page must include:
+
+- company description
+- mission statement
+- infrastructure overview
+- support system explanation
+- uptime and reliability info
+- why choose us section
+
+Partners page:
+
+- technology providers
+- server hardware partners
+- infrastructure partners
+- payment partners
+
+Infrastructure page:
+
+- CPU types (Ryzen / EPYC)
+- SSD / NVMe storage
+- network providers
+- DDoS protection details
+
+---
+
+⚖️ 7. LEGAL PAGES (IMPORTANT FOR TRUST + SEO)
+
+Generate professional legal pages:
+
+Privacy Policy:
+
+- data collection
+- usage of data
+- cookies policy
+- user rights
+
+Terms of Service:
+
+- acceptable usage
+- account rules
+- service limitations
+- suspension conditions
+
+Refund Policy:
+
+- refund eligibility
+- time limits
+- non-refundable cases
+
+Acceptable Use Policy:
+
+- abuse prevention
+- gaming server rules
+- spam / illegal usage restrictions
+
+---
+
+⚙️ 8. TECHNICAL SEO IMPROVEMENTS
+
+Improve:
+
+- sitemap.xml
+
+- robots.txt
+
+- canonical tags
+
+- schema markup:
+  
+  - Organization
+  - HostingService
+  - FAQPage
+
+- page speed optimization
+
+- mobile responsiveness (WITHOUT design change)
+
+- image optimization (WebP recommended)
+
+- lazy loading images
+
+---
+
+🔐 9. TRUST & CONVERSION OPTIMIZATION
+
+Improve text to increase trust:
+
+- uptime messaging
+- support response claims
+- server transparency
+- refund clarity
+- infrastructure proof
+
+Example:
+“Powered by Ryzen 9 / EPYC servers with NVMe SSD storage and low-latency network.”
+
+---
+
+⚠️ HARD CONSTRAINTS (NON-NEGOTIABLE)
+
+- NO UI redesign
+- NO visual styling changes
+- NO layout changes
+- NO new design system
+- ONLY SEO + content + structure + metadata + performance improvements
+
+---
+
+🏁 FINAL OUTPUT FORMAT
+
+Return:
+
+1. List of all pages updated
+2. SEO improvements per page
+3. Updated HTML code snippets
+4. Meta tags added
+5. Internal linking structure
+6. Schema markup added
+7. Blog structure summary
+
+---
+
+💡 FINAL GOAL
+
+Make this website:
+
+- rank like VOLYXHOST / GBNodes
+- load faster
+- have stronger SEO structure
+- increase Google visibility
+- maintain EXACT SAME DESIGN
+
+END.
