@@ -69,6 +69,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <!-- Getting Started -->
+  <url>
+    <loc>https://www.xyle.host/getting-started.html</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <!-- Blog -->
   <url>
     <loc>https://www.xyle.host/blog.html</loc>
