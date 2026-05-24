@@ -14,19 +14,29 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
 ## Project Structure
 ```
 .
-├── index.html                  # Main landing page
+├── index.html                  # Main landing page (restructured: no Company/Features, Trustpilot reviews, FAQ last)
+├── games.html                  # Games selection page — all game server options with visual cards
 ├── products.html               # Product lineup overview
 ├── server-marketplace.html     # Dedicated servers marketplace
 ├── company.html                # About Us page (custom)
 ├── blog.html                   # Blog listing page (custom)
 ├── datacenter.html             # Data Centers page (custom)
-├── custom.css                  # Global custom styles (logo, responsive)
-├── sitemap.xml                 # Full sitemap (10 URLs, auto-generated)
+├── custom.css                  # Global custom styles (~1683 lines: logo, nav dropdown, reviews, games, map, responsive)
+├── performance.js              # Scroll reveal (xy-reveal/xy-visible), lazy loading, smooth scroll
+├── sitemap.xml                 # Full sitemap
 ├── robots.txt                  # SEO robots file
 └── category/
     ├── discord-bot.html        # Discord bot hosting plans
     ├── essential-vps.html      # VPS hosting plans
-    ├── minecraft.html          # Minecraft hosting plans
+    ├── minecraft.html          # Minecraft hosting plans (Nepal/Germany/Singapore tabs)
+    ├── minecraft-nepal.html    # Minecraft Nepal location sub-page
+    ├── minecraft-india.html    # Minecraft India location sub-page
+    ├── minecraft-singapore.html # Minecraft Singapore location sub-page
+    ├── minecraft-germany.html  # Minecraft Germany location sub-page
+    ├── rust.html               # Rust server hosting plans
+    ├── ark.html                # ARK: Survival Evolved hosting plans
+    ├── palworld.html           # Palworld hosting plans
+    ├── hytale.html             # Hytale "Coming Soon" page
     ├── web-hosting.html        # Web hosting plans
     ├── plans.css               # Shared plan card styles (xp-card, xp-chip, etc.)
     └── plans.js                # Shared plan JS: chip SVGs, icons, location filters
@@ -38,6 +48,13 @@ A static website for Xyle Hosting (XyleHosting Pvt Ltd), a provider of hosting s
   - Fully self-hosted, no CDN dependency
 - **Primary blue**: #3959ff | **Dark blue**: #1a2eb8 | **Dark navy**: #0d1b2a
 - **Discord**: discord.gg/xylehosting | **Instagram**: @xylehosting
+
+## Nav Dropdown
+- All pages have a "Games ▾" mega-dropdown replacing old "Pricing" link
+- Dropdown has two columns: Game Servers (Minecraft/Rust/ARK/Palworld/Hytale) + Minecraft by Location (Nepal/India/Singapore/Germany)
+- "Browse All Game Servers" shortcut at top of dropdown links to /games.html
+- Dropdown CSS: `.xm-dropdown-wrap`, `.xm-dropdown-panel`, `.xm-dd-item` in custom.css
+- Dropdown JS inline on every page (click to open, click-outside/Escape to close)
 
 ## Key Implementation Notes
 - `custom.css` + `category/plans.css` included on all pages — handles logo sizing, mobile responsiveness, and plan card styles
