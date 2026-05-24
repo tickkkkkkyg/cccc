@@ -1190,3 +1190,320 @@ img {
     font-size: 26px;
   }
 }
+
+/* ===== TRUSTPILOT REVIEWS SECTION ===== */
+.xyle-reviews-section {
+  padding: 80px 0;
+  background: #f8faff;
+}
+.xyle-reviews-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.xyle-reviews-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 52px;
+  flex-wrap: wrap;
+}
+.xyle-reviews-left {
+  flex: 1;
+  min-width: 260px;
+}
+.xyle-reviews-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #0d1b2a;
+  margin: 8px 0 12px;
+  line-height: 1.2;
+}
+.xyle-reviews-sub {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  color: #667085;
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+.xyle-tp-summary {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #dfe6ff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 4px 16px rgba(26,46,184,0.06);
+}
+.xyle-tp-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.xyle-tp-wordmark {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d1b2a;
+}
+.xyle-tp-score-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.xyle-tp-big-score {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #00b67a;
+  line-height: 1;
+}
+.xyle-tp-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.xyle-tp-star {
+  color: #00b67a;
+  font-size: 18px;
+  line-height: 1;
+}
+.xyle-tp-star.half {
+  color: #ddd;
+  background: linear-gradient(90deg, #00b67a 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.xyle-tp-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #344054;
+  margin-left: 2px;
+}
+.xyle-tp-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: #3959ff;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 2px;
+}
+.xyle-tp-link:hover { text-decoration: underline; }
+
+.xyle-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.xyle-rv-card {
+  background: #fff;
+  border: 1px solid #dfe6ff;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(26,46,184,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.xyle-rv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(26,46,184,0.1);
+}
+.xyle-rv-stars {
+  color: #00b67a;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+.xyle-rv-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0d1b2a;
+  margin: 0;
+  line-height: 1.4;
+}
+.xyle-rv-text {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: #475467;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+.xyle-rv-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #f0f4ff;
+  margin-top: auto;
+}
+.xyle-rv-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #344054;
+}
+.xyle-rv-via {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: #667085;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .xyle-reviews-grid { grid-template-columns: repeat(2, 1fr); }
+  .xyle-reviews-title { font-size: 28px; }
+}
+@media (max-width: 580px) {
+  .xyle-reviews-grid { grid-template-columns: 1fr; }
+  .xyle-reviews-section { padding: 52px 0; }
+}
+
+/* ===== GAMES MEGA-DROPDOWN NAV ===== */
+.xm-dropdown-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.xm-dropdown-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 20px 15px;
+  color: #0d1b2a;
+  font-weight: 500;
+}
+.xm-dropdown-btn:hover { color: #3959ff; }
+.xm-chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.xm-dropdown-btn[aria-expanded="true"] .xm-chevron {
+  transform: rotate(180deg);
+}
+.xm-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 580px;
+  background: #0d1b2a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  transform: translateX(-50%) translateY(-8px);
+  z-index: 9999;
+}
+.xm-dropdown-panel.xm-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.xm-dropdown-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.xm-dd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.xm-dd-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  padding: 6px 10px 8px;
+}
+.xm-dd-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.xm-dd-item:hover {
+  background: rgba(57,89,255,0.18);
+}
+.xm-dd-item.xm-dd-soon {
+  opacity: 0.6;
+}
+.xm-dd-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.xm-dd-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.xm-dd-text strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.xm-dd-text span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+.xm-badge-soon {
+  background: rgba(57,89,255,0.3);
+  color: #adc8ff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  vertical-align: middle;
+}
+@media (max-width: 991px) {
+  .xm-dropdown-panel {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    min-width: unset;
+    transform: none;
+    top: 68px;
+  }
+  .xm-dropdown-panel.xm-open {
+    transform: none;
+  }
+  .xm-dropdown-inner {
+    grid-template-columns: 1fr;
+  }
+}

@@ -143,26 +143,63 @@
           <a href="/" aria-current="page" class="brand w-nav-brand w--current"
             ><span style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><img src="/logo.webp" alt="XyleHosting" width="32" height="32" style="flex-shrink:0;border-radius:8px;object-fit:contain;"/><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#1a2eb8;letter-spacing:-0.5px;white-space:nowrap;">Xyle<span style="color:#3959ff;">Hosting</span></span></span></a>
           <nav role="navigation" class="nav-menu w-nav-menu">
-            <a href="/products.html" class="nav-link w-nav-link">Products</a
-            ><a
-              href="/category/minecraft.html"
-              class="nav-link w-nav-link"
-              >Pricing</a
-            ><a href="/server-marketplace.html" class="nav-link w-nav-link"
-              >Server Marketplace</a
-            ><a href="/company.html" class="nav-link w-nav-link">About Us</a
-            ><a href="/datacenter.html" class="nav-link w-nav-link">Data Centers</a
-            ><a href="/blog.html" class="nav-link w-nav-link">Blog</a>
+            <a href="/products.html" class="nav-link w-nav-link">Products</a>
+            <div class="xm-dropdown-wrap">
+              <button class="nav-link w-nav-link xm-dropdown-btn" aria-expanded="false" aria-haspopup="true">Games <svg class="xm-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <div class="xm-dropdown-panel" role="menu">
+                <div class="xm-dropdown-inner">
+                  <div class="xm-dd-section">
+                    <div class="xm-dd-label">Game Servers</div>
+                    <a href="/category/minecraft.html" class="xm-dd-item">
+                      <span class="xm-dd-icon">⛏️</span>
+                      <span class="xm-dd-text"><strong>Minecraft</strong><span>Java &amp; Bedrock · from $3.49/mo</span></span>
+                    </a>
+                    <a href="/category/rust.html" class="xm-dd-item">
+                      <span class="xm-dd-icon">🔧</span>
+                      <span class="xm-dd-text"><strong>Rust</strong><span>Survival PvP · from $12.99/mo</span></span>
+                    </a>
+                    <a href="/category/ark.html" class="xm-dd-item">
+                      <span class="xm-dd-icon">🦕</span>
+                      <span class="xm-dd-text"><strong>ARK: Survival Evolved</strong><span>High-RAM · from $14.99/mo</span></span>
+                    </a>
+                    <a href="/category/palworld.html" class="xm-dd-item">
+                      <span class="xm-dd-icon">🌍</span>
+                      <span class="xm-dd-text"><strong>Palworld</strong><span>Open World · from $9.99/mo</span></span>
+                    </a>
+                    <a href="/category/hytale.html" class="xm-dd-item xm-dd-soon">
+                      <span class="xm-dd-icon">🎮</span>
+                      <span class="xm-dd-text"><strong>Hytale <span class="xm-badge-soon">Soon</span></strong><span>Adventure · Pre-order</span></span>
+                    </a>
+                  </div>
+                  <div class="xm-dd-section">
+                    <div class="xm-dd-label">Minecraft by Location</div>
+                    <a href="/category/minecraft-nepal.html" class="xm-dd-item">
+                      <span class="xm-dd-icon" style="font-size:15px;">🇳🇵</span>
+                      <span class="xm-dd-text"><strong>Nepal</strong><span>Intel Xeon Gold · $3.49/mo</span></span>
+                    </a>
+                    <a href="/category/minecraft-india.html" class="xm-dd-item">
+                      <span class="xm-dd-icon" style="font-size:15px;">🇮🇳</span>
+                      <span class="xm-dd-text"><strong>India</strong><span>via Nepal DC · $3.49/mo</span></span>
+                    </a>
+                    <a href="/category/minecraft-singapore.html" class="xm-dd-item">
+                      <span class="xm-dd-icon" style="font-size:15px;">🇸🇬</span>
+                      <span class="xm-dd-text"><strong>Singapore</strong><span>AMD EPYC · $3.49/mo</span></span>
+                    </a>
+                    <a href="/category/minecraft-germany.html" class="xm-dd-item">
+                      <span class="xm-dd-icon" style="font-size:15px;">🇩🇪</span>
+                      <span class="xm-dd-text"><strong>Germany</strong><span>Intel Xeon · $2.49/mo</span></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="/server-marketplace.html" class="nav-link w-nav-link">Server Marketplace</a>
+            <a href="/company.html" class="nav-link w-nav-link">About Us</a>
+            <a href="/datacenter.html" class="nav-link w-nav-link">Data Centers</a>
+            <a href="/blog.html" class="nav-link w-nav-link">Blog</a>
             <div class="button-mobile">
-              <a
-                href="https://billing.xyle.host"
-                class="nav-button-outline w-button"
-                >Billing Area</a
-              ><a
-                href="https://panel.xyle.host"
-                class="nav-button w-button"
-                >Server Panel</a
-              >
+              <a href="https://billing.xyle.host" class="nav-button-outline w-button">Billing Area</a>
+              <a href="https://panel.xyle.host" class="nav-button w-button">Server Panel</a>
             </div>
           </nav>
         </div>
@@ -712,865 +749,66 @@
         </div>
       </div>
     </section>
-    <section class="section">
-      <div style="opacity: 0" class="content">
-        <div class="w-layout-grid grid">
-          <div
-            id="w-node-_462e3ae4-d17a-4ca9-c67e-daf8b068f90e-f3a20ee1"
-            data-w-id="462e3ae4-d17a-4ca9-c67e-daf8b068f90e"
-            class="lottie"
-          >
-            <div class="lines-b1">
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-              <div style="width: 1px; height: 0%" class="line-w"></div>
-            </div>
-            <div class="lines-b2">
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-              <div style="width: 0%; height: 1px" class="line-h"></div>
-            </div>
-            <div class="block-lottie">
-              <div
-                data-w-id="462e3ae4-d17a-4ca9-c67e-daf8b068f91e"
-                data-is-ix2-target="1"
-                class="lottie-animation-1"
-                data-animation-type="lottie"
-                data-src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f3d_Lottie%20B1%20White.json"
-                data-loop="0"
-                data-direction="1"
-                data-autoplay="0"
-                data-renderer="svg"
-                data-default-duration="2.5"
-                data-duration="0"
-              ></div>
-              <div
-                class="lottie-animation-2"
-                data-w-id="462e3ae4-d17a-4ca9-c67e-daf8b068f91f"
-                data-animation-type="lottie"
-                data-src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f40_Lottie%20B2%20Blue.json"
-                data-loop="1"
-                data-direction="1"
-                data-autoplay="1"
-                data-is-ix2-target="0"
-                data-renderer="svg"
-                data-default-duration="16"
-                data-duration="0"
-              ></div>
-              <div
-                class="lottie-animation-2-blur"
-                data-w-id="462e3ae4-d17a-4ca9-c67e-daf8b068f920"
-                data-animation-type="lottie"
-                data-src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f40_Lottie%20B2%20Blue.json"
-                data-loop="1"
-                data-direction="1"
-                data-autoplay="1"
-                data-is-ix2-target="0"
-                data-renderer="svg"
-                data-default-duration="16"
-                data-duration="0"
-              ></div>
-            </div>
-          </div>
-          <div
-            id="w-node-a033bb4d-fb8b-e335-6cb2-c443ca8c4bc8-f3a20ee1"
-            class="block-right"
-          >
-            <div class="subtitle">Company<br /></div>
-            <h2 class="heading">Driven on Quality</h2>
-            <p class="paragraph">
-              Our main focus is on quality and making sure<br />you have
-              everything you need to succeed.<br />It&#x27;s like buying a car
-              and seeing all the tick boxes for<br />additional features, except
-              all of these boxes are<br />ticked and included for
-              free! That&#x27;s just how we roll.
-            </p>
-            <div class="w-layout-grid grid-numbers">
-              <div
-                id="w-node-_418ca167-2aa7-6102-c555-e760a541672d-f3a20ee1"
-                class="numbers"
-              >
-                <img
-                  src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f4b_app-connectivity.svg"
-                  loading="eager"
-                  alt=""
-                  class="icon-numbers"
-                />
-                <h4 class="heading-numbers">2650+</h4>
-                <div class="text-numbers">servers currently hosted</div>
+    <!-- ===== TRUSTPILOT REVIEWS SECTION ===== -->
+    <section class="xyle-reviews-section">
+      <div class="xyle-reviews-wrap">
+        <div class="xyle-reviews-header xy-reveal">
+          <div class="xyle-reviews-left">
+            <div class="xyle-eyebrow">Verified Reviews</div>
+            <h2 class="xyle-reviews-title">Our customers speak for us</h2>
+            <p class="xyle-reviews-sub">Real feedback from real XyleHosting customers — no cherry-picking.</p>
+            <div class="xyle-tp-summary">
+              <div class="xyle-tp-logo-row">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#00b67a"/></svg>
+                <span class="xyle-tp-wordmark">Trustpilot</span>
               </div>
-              <div
-                id="w-node-_789e64b8-db23-92f3-fc78-b228e61599d1-f3a20ee1"
-                class="numbers green"
-              >
-                <img
-                  src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f4c_content-delivery-network.svg"
-                  loading="eager"
-                  alt=""
-                  class="icon-numbers"
-                />
-                <h4 class="heading-numbers green">2000+</h4>
-                <div class="text-numbers green">clients around the globe</div>
+              <div class="xyle-tp-score-row">
+                <span class="xyle-tp-big-score">4.8</span>
+                <div class="xyle-tp-stars-row">
+                  <span class="xyle-tp-star">&#9733;</span><span class="xyle-tp-star">&#9733;</span><span class="xyle-tp-star">&#9733;</span><span class="xyle-tp-star">&#9733;</span><span class="xyle-tp-star half">&#9733;</span>
+                  <span class="xyle-tp-label">Excellent</span>
+                </div>
               </div>
+              <a href="https://www.trustpilot.com/review/xyle.host" target="_blank" class="xyle-tp-link">See all reviews →</a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="section">
-      <div style="opacity: 0" class="content">
-        <div class="block-heading">
-          <div class="subtitle">Features<br /></div>
-          <h2 class="heading">Hosting tailored to your needs</h2>
-        </div>
-        <div class="w-layout-grid grid-features">
-          <div
-            id="w-node-_73c7f32a-11c4-52e7-6886-cdc2875e5856-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f52_lightning.svg"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">99.99% Uptime</h5>
-            </div>
-            <p class="paragraph-features">
-              Uptime is critical for your operations, and reliable
-              infrastructure is a must. That&#x27;s where we come in!
-            </p>
+        <div class="xyle-reviews-grid">
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:0ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Best hosting I&#39;ve used</p>
+            <p class="xyle-rv-text">Xyle host is probably one of the best hosting servers in terms of support and tips. Their servers run amazingly with nodes in Germany, Singapore and even Nepal!</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">Ambprow</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
-          <div
-            id="w-node-a64c2106-90fa-a11e-de5a-7f571bc9fce5-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f4e_ibm-cloud-hyper-protect-dbaas.svg"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">DDoS Protected</h5>
-            </div>
-            <p class="paragraph-features">
-              Your service stays safe with our always evolving DDoS protection.
-            </p>
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:60ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Blazing fast at an amazing price</p>
+            <p class="xyle-rv-text">Wonderful hosting that offers blazing fast servers for an affordable price without breaking your budget! Switched from Apex and never looked back.</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">crazy shadow gamer</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
-          <div
-            id="w-node-_0eca363f-fcbf-20ff-a3f9-4b4bf2a0943e-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f51_container-registry.svg"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">Free Offsite Backups</h5>
-            </div>
-            <p class="paragraph-features">
-              Sleep sound at night with free offsite backups, keeping your data
-              safe and secure.
-            </p>
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:120ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Half the price, twice the quality</p>
+            <p class="xyle-rv-text">Switched to Xyle from a host I&#39;ve been using for years because they were offering basically the same package at almost half the price. Staff have been very friendly and helpful.</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">Venion</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
-          <div
-            id="w-node-_81b66805-7f46-c6fe-7448-2cfdb89d7797-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f4f_headset.svg"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">24/7 Expert Support</h5>
-            </div>
-            <p class="paragraph-features">
-              Our support team is always on stand-by to assist you whenever you
-              need it.
-            </p>
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:0ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Better than Apex by miles</p>
+            <p class="xyle-rv-text">Amazing prices, better than Apex hosting by miles. Way less performance issues as well. I would recommend Xyle Hosting to anyone on any budget.</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">Jake Higdon</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
-          <div
-            id="w-node-_4e0c3da6-b2da-b4cc-3c51-1794343837c2-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f50_ibm-watson-machine-learning.svg"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">Fast Performance</h5>
-            </div>
-            <p class="paragraph-features">
-              Experience lightning-fast performance, ensuring your project runs
-              smoothly.
-            </p>
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:60ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Handled 40+ players effortlessly</p>
+            <p class="xyle-rv-text">An amazing experience. My Minecraft server ran very smooth and had no problem handling over 40 people. The Pterodactyl panel makes managing it incredibly easy.</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">Hamid Zitoen</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
-          <div
-            id="w-node-_5ab9e50c-66fe-3297-aab0-dd8ca1a56cd6-f3a20ee1"
-            class="features"
-          >
-            <div class="block-heading-features">
-              <img
-                src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66246ff0774554a9542944d7_green-technology.png"
-                loading="eager"
-                alt=""
-                class="icon-features"
-              />
-              <h5 class="heading-features">Green Technology</h5>
-            </div>
-            <p class="paragraph-features">
-              3.4% of our operating profit funds carbon removal and tree
-              planting for a greener future
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div style="opacity: 0" class="content">
-        <div class="w-layout-grid grid">
-          <div
-            id="w-node-_8081eb8c-b88a-c806-4272-6a0eab494de7-f3a20ee1"
-            data-w-id="8081eb8c-b88a-c806-4272-6a0eab494de7"
-            class="block-reviews"
-          >
-            <div
-              id="w-node-f0ea6266-7176-7ad5-06e9-ad15d7af875d-f3a20ee1"
-              class="reviews-wrapper"
-            >
-              <div class="review-left">
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Xyle host is probably one of the best hosting servers in
-                    terms of support and tips you get from the people at the
-                    front, and their servers run amazingly with nodes in
-                    Germany, Miami, Austrailia and even Singapore!
-                  </p>
-                  <div class="review-name">Ambprow</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Wonderful hosting that offers blazing fast servers for an
-                    affordable price without breaking your budget!
-                  </p>
-                  <div class="review-name">crazy shadow gamer</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Switched to Xyle Hosting from a host I&#x27;ve been using
-                    for years because they were offering basically the same
-                    package at almost half the price. Their site has all the
-                    features you would expect, plus they are adding more. The
-                    staff have been very friendly and helpful in getting me set
-                    up too.
-                  </p>
-                  <div class="review-name">Venion</div>
-                </div>
-              </div>
-              <div class="review-left">
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Xyle host is probably one of the best hosting servers in
-                    terms of support and tips you get from the people at the
-                    front, and their servers run amazingly with nodes in
-                    Germany, Miami, Austrailia and even Singapore!
-                  </p>
-                  <div class="review-name">Ambprow</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Wonderful hosting that offers blazing fast servers for an
-                    affordable price without breaking your budget!
-                  </p>
-                  <div class="review-name">crazy shadow gamer</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Switched to Xyle Hosting from a host I&#x27;ve been using
-                    for years because they were offering basically the same
-                    package at almost half the price. Their site has all the
-                    features you would expect, plus they are adding more. The
-                    staff have been very friendly and helpful in getting me set
-                    up too.
-                  </p>
-                  <div class="review-name">Venion</div>
-                </div>
-              </div>
-            </div>
-            <div class="reviews-wrapper right">
-              <div class="review-right">
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Amazing prices, better than Apex hosting by miles. Way less
-                    performance issues as well. I would recommend Xyle Hosting
-                    to anyone who wants to host a server on alow and even high
-                    budget.
-                  </p>
-                  <div class="review-name">Jake Higdon</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    An amazing experience, I loved using this host to my
-                    previous Minecraft server. It ran very smooth and it had no
-                    problem with handling over 40 people.
-                  </p>
-                  <div class="review-name">Hamid Zitoen</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    I&#x27;ve been with this company for a while and I can
-                    confidently say that they are way better than any other
-                    hosting service. Trust me, I&#x27;ve gone through alot of
-                    hosting services and this is the only one where the service
-                    is cheap while offering the best specs and performance for
-                    servers.
-                  </p>
-                  <div class="review-name">MavSharkLive</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    They truly care for the customer and provide a level of
-                    customer service you&#x27;d see from a large company
-                    it&#x27;s insane Shaum and his team are doing great things!
-                  </p>
-                  <div class="review-name">Shadow K</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Great hosting service and customer service! They have
-                    everything I need and are just great overall! - I am running
-                    a MC server called DuckCord using them
-                  </p>
-                  <div class="review-name">TJ Thompson</div>
-                </div>
-              </div>
-              <div class="review-right">
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Amazing prices, better than Apex hosting by miles. Way less
-                    performance issues as well. I would recommend Xyle Hosting
-                    to anyone who wants to host a server on alow and even high
-                    budget.
-                  </p>
-                  <div class="review-name">Jake Higdon</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    An amazing experience, I loved using this host to my
-                    previous Minecraft server. It ran very smooth and it had no
-                    problem with handling over 40 people.
-                  </p>
-                  <div class="review-name">Hamid Zitoen</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    I&#x27;ve been with this company for a while and I can
-                    confidently say that they are way better than any other
-                    hosting service. Trust me, I&#x27;ve gone through alot of
-                    hosting services and this is the only one where the service
-                    is cheap while offering the best specs and performance for
-                    servers.
-                  </p>
-                  <div class="review-name">MavSharkLive</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    They truly care for the customer and provide a level of
-                    customer service you&#x27;d see from a large company
-                    it&#x27;s insane Shaum and his team are doing great things!
-                  </p>
-                  <div class="review-name">Shadow K</div>
-                </div>
-                <div class="review">
-                  <div class="stars">
-                    <img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    /><img
-                      src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/661bfcfd7a14900ef3a20f57_star.svg"
-                      loading="eager"
-                      alt=""
-                      class="icon-star"
-                    />
-                  </div>
-                  <p class="paragraph-review">
-                    Great hosting service and customer service! They have
-                    everything I need and are just great overall! - I am running
-                    a MC server called DuckCord using them
-                  </p>
-                  <div class="review-name">TJ Thompson</div>
-                </div>
-              </div>
-            </div>
-            <div class="gradient-reviews"></div>
-          </div>
-          <div
-            id="w-node-dd03f682-5e31-981d-1bc3-e09cb94f042f-f3a20ee1"
-            class="block-right"
-          >
-            <div class="subtitle">reviews<br /></div>
-            <h2 class="heading">Our clients&#x27; experiences speak volumes</h2>
-            <p class="paragraph">
-              Step into the stories of those who have entrusted us with their
-              needs. Their words paint a vivid picture of the quality, care, and
-              satisfaction we strive to deliver with every interaction.
-            </p>
-            <a
-              href="https://www.trustpilot.com/review/xyle.host?stars=5"
-              class="button w-button"
-              >More Reviews</a
-            >
+          <div class="xyle-rv-card xy-reveal" style="--xy-delay:120ms">
+            <div class="xyle-rv-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="xyle-rv-title">Customer care from a startup that feels like a big company</p>
+            <p class="xyle-rv-text">They truly care for the customer and provide a level of service you&#39;d only see from a large company. The team is doing great things and the pricing is unbeatable.</p>
+            <div class="xyle-rv-footer"><span class="xyle-rv-name">Shadow K</span><span class="xyle-rv-via"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00b67a"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg> Trustpilot</span></div>
           </div>
         </div>
       </div>
@@ -1678,6 +916,210 @@
         </div>
       </div>
     </section>
+    <!-- ===== COMPARISON SECTION ===== -->
+    <section class="xyle-compare-section">
+      <div class="xyle-compare-wrap">
+        <div class="xyle-compare-head xy-reveal">
+          <div class="xyle-eyebrow">Why Xyle?</div>
+          <h2>We stack up against the best — and win.</h2>
+          <p>See how XyleHosting compares to popular hosting providers on the features that actually matter.</p>
+        </div>
+        <div class="xyle-compare-table-wrap xy-reveal" style="--xy-delay:80ms">
+          <table class="xyle-compare-table">
+            <thead>
+              <tr>
+                <th class="xc-feature-col">Feature</th>
+                <th class="xc-xyle-col">
+                  <span class="xc-logo-badge">
+                    <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#3959ff"/><path d="M10 10L16 16M16 16L22 22M16 16L22 10M16 16L10 22" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg>
+                    XyleHosting
+                  </span>
+                  <span class="xc-best-badge">Best Value</span>
+                </th>
+                <th>Hostinger</th>
+                <th>BisonHost</th>
+                <th>Sparked Host</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="xc-feature">Minecraft from</td>
+                <td class="xc-xyle"><span class="xc-price">$3.99<small>/mo</small></span></td>
+                <td>$8.99/mo</td>
+                <td>$5.99/mo</td>
+                <td>$5.00/mo</td>
+              </tr>
+              <tr>
+                <td class="xc-feature">DDoS Protection</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Included free</span></td>
+                <td><span class="xc-no">✗ Paid add-on</span></td>
+                <td><span class="xc-check">✓</span></td>
+                <td><span class="xc-partial">◑ Limited</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">Nepal / South Asia servers</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Nepal + India</span></td>
+                <td><span class="xc-no">✗ No</span></td>
+                <td><span class="xc-no">✗ No</span></td>
+                <td><span class="xc-no">✗ No</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">NVMe SSD Storage</td>
+                <td class="xc-xyle"><span class="xc-check">✓ All plans</span></td>
+                <td><span class="xc-partial">◑ Higher tiers</span></td>
+                <td><span class="xc-check">✓</span></td>
+                <td><span class="xc-partial">◑ Selected</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">Free Offsite Backups</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Included</span></td>
+                <td><span class="xc-no">✗ Paid</span></td>
+                <td><span class="xc-no">✗ Paid</span></td>
+                <td><span class="xc-partial">◑ Paid</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">Pterodactyl Panel</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Included</span></td>
+                <td><span class="xc-no">✗ Custom panel</span></td>
+                <td><span class="xc-check">✓</span></td>
+                <td><span class="xc-check">✓</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">24/7 Support</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Discord + Ticket</span></td>
+                <td><span class="xc-partial">◑ Ticket only</span></td>
+                <td><span class="xc-check">✓</span></td>
+                <td><span class="xc-partial">◑ Ticket only</span></td>
+              </tr>
+              <tr>
+                <td class="xc-feature">Free Server Migration</td>
+                <td class="xc-xyle"><span class="xc-check">✓ Always free</span></td>
+                <td><span class="xc-no">✗</span></td>
+                <td><span class="xc-no">✗</span></td>
+                <td><span class="xc-no">✗</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="xyle-compare-cta xy-reveal" style="--xy-delay:160ms">
+          <a href="/category/minecraft.html" class="button w-button">See Our Plans</a>
+          <a href="/products.html" class="xyle-why-link" style="font-size:15px">View all products →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LOCATION MAP SECTION ===== -->
+    <section class="xyle-loc-section">
+      <div class="xyle-loc-wrap">
+        <div class="xyle-loc-head xy-reveal">
+          <div class="xyle-eyebrow">Global Network</div>
+          <h2>Your players, closer to their server.</h2>
+          <p>XyleHosting operates data centers across Asia and Europe — so your users get the lowest latency possible, wherever they are.</p>
+        </div>
+        <div class="xyle-loc-body">
+          <div class="xyle-loc-map-wrap xy-reveal" style="--xy-delay:60ms">
+            <svg class="xyle-world-map" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="World map showing XyleHosting data center locations">
+              <!-- Simplified world landmass outlines -->
+              <!-- North America -->
+              <path d="M80 110 L145 95 L165 105 L175 120 L185 140 L190 165 L180 185 L160 200 L155 220 L140 235 L120 230 L100 215 L85 195 L75 170 L70 145 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Greenland -->
+              <path d="M190 60 L220 55 L235 70 L230 90 L205 95 L190 80 Z" fill="#dfe6ff" opacity="0.4"/>
+              <!-- South America -->
+              <path d="M145 245 L175 235 L195 250 L200 275 L195 310 L185 335 L165 350 L145 345 L130 325 L125 295 L130 265 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Europe -->
+              <path d="M390 80 L430 75 L450 85 L455 100 L445 115 L430 120 L410 115 L395 100 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Africa -->
+              <path d="M395 130 L435 125 L455 140 L460 165 L455 200 L440 230 L415 250 L395 245 L378 220 L372 190 L375 160 L385 140 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Russia/Central Asia -->
+              <path d="M455 60 L560 50 L600 65 L610 80 L590 95 L545 100 L500 98 L460 90 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Middle East -->
+              <path d="M450 115 L500 110 L515 125 L510 145 L490 155 L465 150 L452 135 Z" fill="#dfe6ff" opacity="0.4"/>
+              <!-- South Asia (India) -->
+              <path d="M520 145 L555 140 L565 155 L570 175 L560 200 L540 215 L520 210 L508 190 L510 165 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- East Asia -->
+              <path d="M610 75 L670 70 L695 85 L700 105 L685 120 L655 125 L625 115 L610 100 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Southeast Asia -->
+              <path d="M635 140 L670 135 L685 148 L680 165 L660 170 L640 162 Z" fill="#dfe6ff" opacity="0.5"/>
+              <!-- Australia -->
+              <path d="M670 265 L730 255 L755 270 L758 295 L745 315 L715 320 L685 310 L668 290 Z" fill="#dfe6ff" opacity="0.4"/>
+              <!-- Japan -->
+              <path d="M700 95 L715 90 L722 100 L718 112 L705 115 L698 107 Z" fill="#dfe6ff" opacity="0.4"/>
+
+              <!-- Connection lines between data centers -->
+              <line x1="416" y1="100" x2="533" y2="170" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
+              <line x1="533" y1="170" x2="655" y2="155" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
+              <line x1="533" y1="170" x2="540" y2="130" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
+              <line x1="540" y1="130" x2="655" y2="155" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
+
+              <!-- Germany pin (Frankfurt ~416, 100) -->
+              <circle cx="416" cy="100" r="10" fill="#3959ff" opacity="0.15"/>
+              <circle cx="416" cy="100" r="5.5" fill="#3959ff"/>
+              <circle cx="416" cy="100" r="2.5" fill="#fff"/>
+
+              <!-- India pin (Mumbai/Hyderabad ~533, 170) -->
+              <circle cx="533" cy="170" r="10" fill="#3959ff" opacity="0.15"/>
+              <circle cx="533" cy="170" r="5.5" fill="#3959ff"/>
+              <circle cx="533" cy="170" r="2.5" fill="#fff"/>
+
+              <!-- Nepal pin (~545, 150) -->
+              <circle cx="545" cy="148" r="10" fill="#1a2eb8" opacity="0.15"/>
+              <circle cx="545" cy="148" r="5.5" fill="#1a2eb8"/>
+              <circle cx="545" cy="148" r="2.5" fill="#fff"/>
+
+              <!-- Singapore pin (~655, 190 - SE Asia) -->
+              <circle cx="655" cy="190" r="10" fill="#3959ff" opacity="0.15"/>
+              <circle cx="655" cy="190" r="5.5" fill="#3959ff"/>
+              <circle cx="655" cy="190" r="2.5" fill="#fff"/>
+
+              <!-- Location labels -->
+              <text x="416" y="88" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Frankfurt</text>
+              <text x="533" y="188" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">India</text>
+              <text x="545" y="136" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Nepal</text>
+              <text x="655" y="208" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Singapore</text>
+            </svg>
+          </div>
+          <div class="xyle-loc-cards">
+            <div class="xyle-loc-card xy-reveal" style="--xy-delay:80ms">
+              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/np.png" width="32" height="24" alt="Nepal" loading="lazy"/></div>
+              <div class="xyle-loc-info">
+                <div class="xyle-loc-name">Kathmandu, Nepal</div>
+                <div class="xyle-loc-ping">~5 ms to Nepal users</div>
+                <div class="xyle-loc-tags"><span>Minecraft</span><span>VPS</span><span>Web</span></div>
+              </div>
+              <div class="xyle-loc-status"></div>
+            </div>
+            <div class="xyle-loc-card xy-reveal" style="--xy-delay:140ms">
+              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/in.png" width="32" height="24" alt="India" loading="lazy"/></div>
+              <div class="xyle-loc-info">
+                <div class="xyle-loc-name">Mumbai, India</div>
+                <div class="xyle-loc-ping">~12 ms to India users</div>
+                <div class="xyle-loc-tags"><span>Minecraft</span><span>VPS</span><span>Bot</span></div>
+              </div>
+              <div class="xyle-loc-status"></div>
+            </div>
+            <div class="xyle-loc-card xy-reveal" style="--xy-delay:200ms">
+              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/sg.png" width="32" height="24" alt="Singapore" loading="lazy"/></div>
+              <div class="xyle-loc-info">
+                <div class="xyle-loc-name">Singapore, SG</div>
+                <div class="xyle-loc-ping">~25 ms to SEA users</div>
+                <div class="xyle-loc-tags"><span>VPS</span><span>Dedicated</span><span>Web</span></div>
+              </div>
+              <div class="xyle-loc-status"></div>
+            </div>
+            <div class="xyle-loc-card xy-reveal" style="--xy-delay:260ms">
+              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/de.png" width="32" height="24" alt="Germany" loading="lazy"/></div>
+              <div class="xyle-loc-info">
+                <div class="xyle-loc-name">Frankfurt, Germany</div>
+                <div class="xyle-loc-ping">~8 ms to Europe users</div>
+                <div class="xyle-loc-tags"><span>Dedicated</span><span>VPS</span><span>Web</span></div>
+              </div>
+              <div class="xyle-loc-status"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div style="opacity: 0" class="content">
         <div class="block-heading center">
@@ -1927,210 +1369,8 @@
       </div>
     </section>
     
-    <!-- ===== COMPARISON SECTION ===== -->
-    <section class="xyle-compare-section">
-      <div class="xyle-compare-wrap">
-        <div class="xyle-compare-head xy-reveal">
-          <div class="xyle-eyebrow">Why Xyle?</div>
-          <h2>We stack up against the best — and win.</h2>
-          <p>See how XyleHosting compares to popular hosting providers on the features that actually matter.</p>
-        </div>
-        <div class="xyle-compare-table-wrap xy-reveal" style="--xy-delay:80ms">
-          <table class="xyle-compare-table">
-            <thead>
-              <tr>
-                <th class="xc-feature-col">Feature</th>
-                <th class="xc-xyle-col">
-                  <span class="xc-logo-badge">
-                    <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#3959ff"/><path d="M10 10L16 16M16 16L22 22M16 16L22 10M16 16L10 22" stroke="white" stroke-width="2.8" stroke-linecap="round"/></svg>
-                    XyleHosting
-                  </span>
-                  <span class="xc-best-badge">Best Value</span>
-                </th>
-                <th>Hostinger</th>
-                <th>BisonHost</th>
-                <th>Sparked Host</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="xc-feature">Minecraft from</td>
-                <td class="xc-xyle"><span class="xc-price">$3.99<small>/mo</small></span></td>
-                <td>$8.99/mo</td>
-                <td>$5.99/mo</td>
-                <td>$5.00/mo</td>
-              </tr>
-              <tr>
-                <td class="xc-feature">DDoS Protection</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Included free</span></td>
-                <td><span class="xc-no">✗ Paid add-on</span></td>
-                <td><span class="xc-check">✓</span></td>
-                <td><span class="xc-partial">◑ Limited</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">Nepal / South Asia servers</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Nepal + India</span></td>
-                <td><span class="xc-no">✗ No</span></td>
-                <td><span class="xc-no">✗ No</span></td>
-                <td><span class="xc-no">✗ No</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">NVMe SSD Storage</td>
-                <td class="xc-xyle"><span class="xc-check">✓ All plans</span></td>
-                <td><span class="xc-partial">◑ Higher tiers</span></td>
-                <td><span class="xc-check">✓</span></td>
-                <td><span class="xc-partial">◑ Selected</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">Free Offsite Backups</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Included</span></td>
-                <td><span class="xc-no">✗ Paid</span></td>
-                <td><span class="xc-no">✗ Paid</span></td>
-                <td><span class="xc-partial">◑ Paid</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">Pterodactyl Panel</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Included</span></td>
-                <td><span class="xc-no">✗ Custom panel</span></td>
-                <td><span class="xc-check">✓</span></td>
-                <td><span class="xc-check">✓</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">24/7 Support</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Discord + Ticket</span></td>
-                <td><span class="xc-partial">◑ Ticket only</span></td>
-                <td><span class="xc-check">✓</span></td>
-                <td><span class="xc-partial">◑ Ticket only</span></td>
-              </tr>
-              <tr>
-                <td class="xc-feature">Free Server Migration</td>
-                <td class="xc-xyle"><span class="xc-check">✓ Always free</span></td>
-                <td><span class="xc-no">✗</span></td>
-                <td><span class="xc-no">✗</span></td>
-                <td><span class="xc-no">✗</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="xyle-compare-cta xy-reveal" style="--xy-delay:160ms">
-          <a href="/category/minecraft.html" class="button w-button">See Our Plans</a>
-          <a href="/products.html" class="xyle-why-link" style="font-size:15px">View all products →</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ===== LOCATION MAP SECTION ===== -->
-    <section class="xyle-loc-section">
-      <div class="xyle-loc-wrap">
-        <div class="xyle-loc-head xy-reveal">
-          <div class="xyle-eyebrow">Global Network</div>
-          <h2>Your players, closer to their server.</h2>
-          <p>XyleHosting operates data centers across Asia and Europe — so your users get the lowest latency possible, wherever they are.</p>
-        </div>
-        <div class="xyle-loc-body">
-          <div class="xyle-loc-map-wrap xy-reveal" style="--xy-delay:60ms">
-            <svg class="xyle-world-map" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="World map showing XyleHosting data center locations">
-              <!-- Simplified world landmass outlines -->
-              <!-- North America -->
-              <path d="M80 110 L145 95 L165 105 L175 120 L185 140 L190 165 L180 185 L160 200 L155 220 L140 235 L120 230 L100 215 L85 195 L75 170 L70 145 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Greenland -->
-              <path d="M190 60 L220 55 L235 70 L230 90 L205 95 L190 80 Z" fill="#dfe6ff" opacity="0.4"/>
-              <!-- South America -->
-              <path d="M145 245 L175 235 L195 250 L200 275 L195 310 L185 335 L165 350 L145 345 L130 325 L125 295 L130 265 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Europe -->
-              <path d="M390 80 L430 75 L450 85 L455 100 L445 115 L430 120 L410 115 L395 100 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Africa -->
-              <path d="M395 130 L435 125 L455 140 L460 165 L455 200 L440 230 L415 250 L395 245 L378 220 L372 190 L375 160 L385 140 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Russia/Central Asia -->
-              <path d="M455 60 L560 50 L600 65 L610 80 L590 95 L545 100 L500 98 L460 90 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Middle East -->
-              <path d="M450 115 L500 110 L515 125 L510 145 L490 155 L465 150 L452 135 Z" fill="#dfe6ff" opacity="0.4"/>
-              <!-- South Asia (India) -->
-              <path d="M520 145 L555 140 L565 155 L570 175 L560 200 L540 215 L520 210 L508 190 L510 165 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- East Asia -->
-              <path d="M610 75 L670 70 L695 85 L700 105 L685 120 L655 125 L625 115 L610 100 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Southeast Asia -->
-              <path d="M635 140 L670 135 L685 148 L680 165 L660 170 L640 162 Z" fill="#dfe6ff" opacity="0.5"/>
-              <!-- Australia -->
-              <path d="M670 265 L730 255 L755 270 L758 295 L745 315 L715 320 L685 310 L668 290 Z" fill="#dfe6ff" opacity="0.4"/>
-              <!-- Japan -->
-              <path d="M700 95 L715 90 L722 100 L718 112 L705 115 L698 107 Z" fill="#dfe6ff" opacity="0.4"/>
-
-              <!-- Connection lines between data centers -->
-              <line x1="416" y1="100" x2="533" y2="170" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
-              <line x1="533" y1="170" x2="655" y2="155" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
-              <line x1="533" y1="170" x2="540" y2="130" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
-              <line x1="540" y1="130" x2="655" y2="155" stroke="#3959ff" stroke-width="1.2" stroke-dasharray="5,4" opacity="0.3"/>
-
-              <!-- Germany pin (Frankfurt ~416, 100) -->
-              <circle cx="416" cy="100" r="10" fill="#3959ff" opacity="0.15"/>
-              <circle cx="416" cy="100" r="5.5" fill="#3959ff"/>
-              <circle cx="416" cy="100" r="2.5" fill="#fff"/>
-
-              <!-- India pin (Mumbai/Hyderabad ~533, 170) -->
-              <circle cx="533" cy="170" r="10" fill="#3959ff" opacity="0.15"/>
-              <circle cx="533" cy="170" r="5.5" fill="#3959ff"/>
-              <circle cx="533" cy="170" r="2.5" fill="#fff"/>
-
-              <!-- Nepal pin (~545, 150) -->
-              <circle cx="545" cy="148" r="10" fill="#1a2eb8" opacity="0.15"/>
-              <circle cx="545" cy="148" r="5.5" fill="#1a2eb8"/>
-              <circle cx="545" cy="148" r="2.5" fill="#fff"/>
-
-              <!-- Singapore pin (~655, 190 - SE Asia) -->
-              <circle cx="655" cy="190" r="10" fill="#3959ff" opacity="0.15"/>
-              <circle cx="655" cy="190" r="5.5" fill="#3959ff"/>
-              <circle cx="655" cy="190" r="2.5" fill="#fff"/>
-
-              <!-- Location labels -->
-              <text x="416" y="88" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Frankfurt</text>
-              <text x="533" y="188" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">India</text>
-              <text x="545" y="136" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Nepal</text>
-              <text x="655" y="208" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="9" font-weight="700" fill="#1a2eb8" letter-spacing="0.3">Singapore</text>
-            </svg>
-          </div>
-          <div class="xyle-loc-cards">
-            <div class="xyle-loc-card xy-reveal" style="--xy-delay:80ms">
-              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/np.png" width="32" height="24" alt="Nepal" loading="lazy"/></div>
-              <div class="xyle-loc-info">
-                <div class="xyle-loc-name">Kathmandu, Nepal</div>
-                <div class="xyle-loc-ping">~5 ms to Nepal users</div>
-                <div class="xyle-loc-tags"><span>Minecraft</span><span>VPS</span><span>Web</span></div>
-              </div>
-              <div class="xyle-loc-status"></div>
-            </div>
-            <div class="xyle-loc-card xy-reveal" style="--xy-delay:140ms">
-              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/in.png" width="32" height="24" alt="India" loading="lazy"/></div>
-              <div class="xyle-loc-info">
-                <div class="xyle-loc-name">Mumbai, India</div>
-                <div class="xyle-loc-ping">~12 ms to India users</div>
-                <div class="xyle-loc-tags"><span>Minecraft</span><span>VPS</span><span>Bot</span></div>
-              </div>
-              <div class="xyle-loc-status"></div>
-            </div>
-            <div class="xyle-loc-card xy-reveal" style="--xy-delay:200ms">
-              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/sg.png" width="32" height="24" alt="Singapore" loading="lazy"/></div>
-              <div class="xyle-loc-info">
-                <div class="xyle-loc-name">Singapore, SG</div>
-                <div class="xyle-loc-ping">~25 ms to SEA users</div>
-                <div class="xyle-loc-tags"><span>VPS</span><span>Dedicated</span><span>Web</span></div>
-              </div>
-              <div class="xyle-loc-status"></div>
-            </div>
-            <div class="xyle-loc-card xy-reveal" style="--xy-delay:260ms">
-              <div class="xyle-loc-flag"><img src="https://flagcdn.com/32x24/de.png" width="32" height="24" alt="Germany" loading="lazy"/></div>
-              <div class="xyle-loc-info">
-                <div class="xyle-loc-name">Frankfurt, Germany</div>
-                <div class="xyle-loc-ping">~8 ms to Europe users</div>
-                <div class="xyle-loc-tags"><span>Dedicated</span><span>VPS</span><span>Web</span></div>
-              </div>
-              <div class="xyle-loc-status"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    
     <section class="section-footer">
       <div class="content">
         <div class="w-layout-grid grid-footer">
@@ -2240,5 +1480,35 @@
     ></script>
       <script src="/category/plans.js"></script>
     <script src="/performance.js" defer></script>
+    <script>
+    (function() {
+      var wrap = document.querySelector('.xm-dropdown-wrap');
+      if (!wrap) return;
+      var btn = wrap.querySelector('.xm-dropdown-btn');
+      var panel = wrap.querySelector('.xm-dropdown-panel');
+
+      function open() {
+        panel.classList.add('xm-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+      function close() {
+        panel.classList.remove('xm-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        panel.classList.contains('xm-open') ? close() : open();
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!wrap.contains(e.target)) close();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+    })();
+    </script>
 </body>
 </html>
