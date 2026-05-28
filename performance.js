@@ -305,6 +305,12 @@
     }
   };
 
+  function forceRevealAll() {
+    document.querySelectorAll('.xy-reveal:not(.xy-visible)').forEach(function (el) {
+      el.classList.add('xy-visible');
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     createSkeleton();
     optimizeImages();
@@ -316,9 +322,11 @@
     window.requestAnimationFrame(function () {
       window.setTimeout(hideSkeleton, 420);
     });
+    window.setTimeout(forceRevealAll, 1200);
   });
 
   window.addEventListener('load', function () {
     window.setTimeout(hideSkeleton, 80);
+    window.setTimeout(forceRevealAll, 600);
   }, { once: true });
 })();
