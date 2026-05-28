@@ -83,75 +83,64 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="content">
-
-    </div>
+<section style="background:#f8faff;padding:64px 20px 80px;">
+  <div style="max-width:1100px;margin:0 auto;">
 
     <div class="xp-head" style="margin-bottom:36px;"><h2>Choose Your Minecraft Plan</h2><p>Pick the tier that suits your server — full plan details and configuration options are available in the billing portal.</p></div>
 
     <div class="xp-plan-grid">
 
       <!-- Budget Plan -->
-      <div style="background:#fff;border:1px solid #dfe6ff;border-radius:20px;padding:32px 28px;box-shadow:0 6px 28px rgba(26,46,184,0.07);display:flex;flex-direction:column;gap:20px;transition:transform 0.22s,box-shadow 0.22s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(26,46,184,0.13)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 6px 28px rgba(26,46,184,0.07)'">
+      <div class="xp-card">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:#eef2ff;border-radius:8px;padding:6px 12px;margin-bottom:16px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="#3959ff"/><circle cx="6" cy="18" r="1" fill="#3959ff"/></svg>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3959ff;letter-spacing:0.5px;">BUDGET</span>
-          </div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;color:#0d1b2a;margin:0 0 8px;">Budget Plan</h3>
-          <p style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:#667085;margin:0;line-height:1.6;">Great for small servers, friends, and getting started.</p>
+          <div class="xp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="#3959ff"/><circle cx="6" cy="18" r="1" fill="#3959ff"/></svg><span>BUDGET</span></div>
+          <h3 class="xp-card-title">Budget Plan</h3>
+          <p class="xp-card-desc">Great for small servers, friends, and getting started.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>4 GB RAM</strong></div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>NVMe SSD Storage</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Server Splits Included</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DDoS Protection</div>
-        </div>
-        <a href="https://billing.xyle.host" target="_blank" style="display:block;text-align:center;background:#3959ff;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:14px 0;border-radius:12px;text-decoration:none;margin-top:auto;transition:background 0.18s;" onmouseenter="this.style.background='#1a2eb8'" onmouseleave="this.style.background='#3959ff'">Get Started</a>
+        <ul class="xp-features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>4 GB RAM</strong></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>NVMe SSD Storage</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Server Splits Included</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DDoS Protection</li>
+        </ul>
+        <a href="https://billing.xyle.host" target="_blank" class="xp-btn">Get Started</a>
       </div>
 
       <!-- Premium Plan -->
-      <div style="background:#fff;border:2px solid #3959ff;border-radius:20px;padding:32px 28px;box-shadow:0 8px 36px rgba(57,89,255,0.14);display:flex;flex-direction:column;gap:20px;position:relative;transition:transform 0.22s,box-shadow 0.22s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 20px 48px rgba(57,89,255,0.2)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 8px 36px rgba(57,89,255,0.14)'">
-        <div style="position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#3959ff;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;white-space:nowrap;letter-spacing:0.5px;">MOST POPULAR</div>
+      <div class="xp-card xp-card-featured">
+        <div class="xp-popular-pill">MOST POPULAR</div>
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:#eef2ff;border-radius:8px;padding:6px 12px;margin-bottom:16px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3959ff;letter-spacing:0.5px;">PREMIUM</span>
-          </div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;color:#0d1b2a;margin:0 0 8px;">Premium Plan</h3>
-          <p style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:#667085;margin:0;line-height:1.6;">Best for larger communities and modded servers.</p>
+          <div class="xp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>PREMIUM</span></div>
+          <h3 class="xp-card-title">Premium Plan</h3>
+          <p class="xp-card-desc">Best for larger communities and modded servers.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>8 GB RAM</strong></div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>High-speed NVMe SSD</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Server Splits</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Advanced DDoS Protection</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Daily Backups + Priority Support</div>
-        </div>
-        <a href="https://billing.xyle.host" target="_blank" style="display:block;text-align:center;background:#3959ff;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:14px 0;border-radius:12px;text-decoration:none;margin-top:auto;transition:background 0.18s;" onmouseenter="this.style.background='#1a2eb8'" onmouseleave="this.style.background='#3959ff'">Get Started</a>
+        <ul class="xp-features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>8 GB RAM</strong></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>High-speed NVMe SSD</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Unlimited Server Splits</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Advanced DDoS Protection</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Daily Backups + Priority Support</li>
+        </ul>
+        <a href="https://billing.xyle.host" target="_blank" class="xp-btn">Get Started</a>
       </div>
 
       <!-- Proxy Plan -->
-      <div style="background:#fff;border:1px solid #dfe6ff;border-radius:20px;padding:32px 28px;box-shadow:0 6px 28px rgba(26,46,184,0.07);display:flex;flex-direction:column;gap:20px;transition:transform 0.22s,box-shadow 0.22s;" onmouseenter="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 40px rgba(26,46,184,0.13)'" onmouseleave="this.style.transform='';this.style.boxShadow='0 6px 28px rgba(26,46,184,0.07)'">
+      <div class="xp-card">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:#eef2ff;border-radius:8px;padding:6px 12px;margin-bottom:16px;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:#3959ff;letter-spacing:0.5px;">PROXY</span>
-          </div>
-          <h3 style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;color:#0d1b2a;margin:0 0 8px;">Proxy Plan</h3>
-          <p style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:#667085;margin:0;line-height:1.6;">Built for BungeeCord &amp; Velocity networks connecting multiple servers.</p>
+          <div class="xp-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8l4 4-4 4"/></svg><span>PROXY</span></div>
+          <h3 class="xp-card-title">Proxy Plan</h3>
+          <p class="xp-card-desc">Built for BungeeCord &amp; Velocity networks connecting multiple servers.</p>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>4 GB RAM</strong></div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>NVMe SSD Storage</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>BungeeCord &amp; Velocity Ready</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</div>
-          <div style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:#344054;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DDoS Protection + Daily Backups</div>
-        </div>
-        <a href="https://billing.xyle.host" target="_blank" style="display:block;text-align:center;background:#3959ff;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:14px 0;border-radius:12px;text-decoration:none;margin-top:auto;transition:background 0.18s;" onmouseenter="this.style.background='#1a2eb8'" onmouseleave="this.style.background='#3959ff'">Get Started</a>
+        <ul class="xp-features">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Starting from <strong>4 GB RAM</strong></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>NVMe SSD Storage</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>BungeeCord &amp; Velocity Ready</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Free MySQL Database</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>DDoS Protection + Daily Backups</li>
+        </ul>
+        <a href="https://billing.xyle.host" target="_blank" class="xp-btn">Get Started</a>
       </div>
 
     </div>

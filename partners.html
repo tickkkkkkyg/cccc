@@ -32,6 +32,7 @@
   <link href="/logo.webp" rel="shortcut icon" type="image/x-icon"/>
   <link href="/logo.webp" rel="apple-touch-icon"/>
   <link href="/custom.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebPage","name":"Our Partners","url":"https://www.xyle.host/partners.html","description":"Technology, hardware, and infrastructure partners powering XyleHosting's services.","publisher":{"@type":"Organization","name":"XyleHosting","url":"https://www.xyle.host"}}
 </script>
@@ -43,7 +44,6 @@
       <a href="/" class="brand w-nav-brand"><span style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><img src="/logo.webp" alt="XyleHosting" width="32" height="32" style="flex-shrink:0;border-radius:8px;object-fit:contain;"/><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#1a2eb8;letter-spacing:-0.5px;white-space:nowrap;">Xyle<span style="color:#3959ff;">Hosting</span></span></span></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="/products.html" class="nav-link w-nav-link">Products</a>
-        <a href="/category/minecraft.html" class="nav-link w-nav-link">Pricing</a>
         <a href="/server-marketplace.html" class="nav-link w-nav-link">Server Marketplace</a>
         <a href="/company.html" class="nav-link w-nav-link">About Us</a>
         <a href="/datacenter.html" class="nav-link w-nav-link">Data Centers</a>
@@ -73,63 +73,61 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="content">
+<section style="background:#fff;padding:72px 20px 80px;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div class="block-heading center">
-      <div class="subtitle">hardware partners<br/></div>
+      <div class="subtitle">hardware partners</div>
       <h2 class="heading">Powered by industry-leading hardware</h2>
     </div>
+    <div class="partner-grid-3">
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-
-      <div style="padding:32px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <div style="width:56px;height:56px;background:rgba(0,113,197,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(0,113,197,0.10);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0071C5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/></svg>
         </div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">Intel</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">CPU Partner</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">Intel Xeon Gold 5412U processors power our entry-level <a href="/category/minecraft.html" style="color:#3959ff;">Minecraft hosting</a> plans, delivering strong multi-threaded performance for medium to large communities at an affordable price point.</p>
+        <h3>Intel</h3>
+        <div class="partner-card-label">CPU Partner</div>
+        <p>Intel Xeon Gold 5412U processors power our entry-level <a href="/category/minecraft.html" style="color:#3959ff;">Minecraft hosting</a> plans, delivering strong multi-threaded performance for medium to large communities at an affordable price point.</p>
       </div>
 
-      <div style="padding:32px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <div style="width:56px;height:56px;background:rgba(237,28,36,0.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(237,28,36,0.08);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ED1C24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">AMD</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Premium CPU Partner</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">AMD Ryzen 9 processors with high single-core clock speeds power our premium Minecraft and <a href="/category/essential-vps.html" style="color:#3959ff;">NVMe VPS</a> plans. Ryzen's IPC advantage directly translates to lower TPS latency on game servers.</p>
+        <h3>AMD</h3>
+        <div class="partner-card-label">Premium CPU Partner</div>
+        <p>AMD Ryzen 9 processors with high single-core clock speeds power our premium Minecraft and <a href="/category/essential-vps.html" style="color:#3959ff;">NVMe VPS</a> plans. Ryzen's IPC advantage directly translates to lower TPS latency on game servers.</p>
       </div>
 
-      <div style="padding:32px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <div style="width:56px;height:56px;background:rgba(57,89,255,0.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="#3959ff"/><circle cx="6" cy="18" r="1" fill="#3959ff"/></svg>
         </div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">Samsung NVMe</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Storage Partner</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">Enterprise-grade Samsung NVMe SSDs deliver sequential read speeds up to 7,000 MB/s, ensuring instant world loading for Minecraft servers and near-zero latency for database-heavy applications on VPS plans.</p>
+        <h3>Samsung NVMe</h3>
+        <div class="partner-card-label">Storage Partner</div>
+        <p>Enterprise-grade Samsung NVMe SSDs deliver sequential read speeds up to 7,000 MB/s, ensuring instant world loading for Minecraft servers and near-zero latency for database-heavy applications on VPS plans.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="content">
+<section style="background:#f8faff;padding:72px 20px 80px;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div class="block-heading center">
-      <div class="subtitle">network & security<br/></div>
+      <div class="subtitle">network &amp; security</div>
       <h2 class="heading">Enterprise-grade network protection</h2>
     </div>
+    <div class="partner-grid-2">
 
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;">
-
-      <div style="padding:36px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <div style="width:56px;height:56px;background:rgba(57,89,255,0.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
         </div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">NeoProtect</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">DDoS Protection Partner</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0 0 16px;">XyleHosting partners with NeoProtect to provide automatic, always-on DDoS mitigation with up to 1 Tbps+ scrubbing capacity. All plans include DDoS protection at no additional cost — attacks are absorbed before they reach your server, keeping your community online 24/7.</p>
-        <ul style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:2;padding-left:20px;margin:0;">
+        <h3>NeoProtect</h3>
+        <div class="partner-card-label">DDoS Protection Partner</div>
+        <p>XyleHosting partners with NeoProtect to provide automatic, always-on DDoS mitigation with up to 1 Tbps+ scrubbing capacity. All plans include DDoS protection at no additional cost — attacks are absorbed before they reach your server, keeping your community online 24/7.</p>
+        <ul>
           <li>Automatic attack detection and filtering</li>
           <li>Sub-5-second mitigation activation</li>
           <li>Layer 3, 4, and 7 protection</li>
@@ -137,14 +135,14 @@
         </ul>
       </div>
 
-      <div style="padding:36px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <div style="width:56px;height:56px;background:rgba(57,89,255,0.10);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">Tier-1 Network Providers</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Connectivity Partners</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0 0 16px;">Our <a href="/datacenter.html" style="color:#3959ff;">datacenters</a> in Nepal, India, Singapore, and Germany are connected to multiple Tier-1 network providers ensuring redundant, low-latency connectivity to players across Asia and Europe.</p>
-        <ul style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:2;padding-left:20px;margin:0;">
+        <h3>Tier-1 Network Providers</h3>
+        <div class="partner-card-label">Connectivity Partners</div>
+        <p>Our <a href="/datacenter.html" style="color:#3959ff;">datacenters</a> in Nepal, India, Singapore, and Germany are connected to multiple Tier-1 network providers ensuring redundant, low-latency connectivity to players across Asia and Europe.</p>
+        <ul>
           <li>Multi-homed BGP routing</li>
           <li>&lt;5ms latency within same region</li>
           <li>10 Gbps uplink per node</li>
@@ -156,31 +154,39 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="content">
+<section style="background:#fff;padding:72px 20px 80px;">
+  <div style="max-width:1100px;margin:0 auto;">
     <div class="block-heading center">
-      <div class="subtitle">infrastructure partners<br/></div>
-      <h2 class="heading">Datacenter & platform infrastructure</h2>
+      <div class="subtitle">infrastructure partners</div>
+      <h2 class="heading">Datacenter &amp; platform infrastructure</h2>
     </div>
+    <div class="partner-grid-3">
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;">
-
-      <div style="padding:28px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">Pterodactyl</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Control Panel</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">Industry-standard open-source game server management panel — the same system used by the largest hosting providers globally. Access your server at <a href="https://panel.xyle.host" style="color:#3959ff;">panel.xyle.host</a>.</p>
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1" fill="#3959ff"/><circle cx="6" cy="18" r="1" fill="#3959ff"/></svg>
+        </div>
+        <h3>Pterodactyl</h3>
+        <div class="partner-card-label">Control Panel</div>
+        <p>Industry-standard open-source game server management panel — the same system used by the largest hosting providers globally. Access your server at <a href="https://panel.xyle.host" style="color:#3959ff;">panel.xyle.host</a>.</p>
       </div>
 
-      <div style="padding:28px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">WHMCS</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Billing Platform</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">Enterprise-grade billing and client management. Manage invoices, upgrade plans, and open support tickets at <a href="https://billing.xyle.host" style="color:#3959ff;">billing.xyle.host</a>.</p>
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>WHMCS</h3>
+        <div class="partner-card-label">Billing Platform</div>
+        <p>Enterprise-grade billing and client management. Manage invoices, upgrade plans, and open support tickets at <a href="https://billing.xyle.host" style="color:#3959ff;">billing.xyle.host</a>.</p>
       </div>
 
-      <div style="padding:28px;background:#f0f4ff;border:1px solid rgba(57,89,255,0.2);border-radius:16px;">
-        <h3 style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#0d1b2a;margin:0 0 8px;">Tier-3 Datacenters</h3>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#3959ff;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Facility Partners</div>
-        <p style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.72);line-height:1.7;margin:0;">Our servers are co-located in Tier-3 certified datacenters across <a href="/datacenter.html" style="color:#3959ff;">Nepal, India, Singapore, and Germany</a> with N+1 power redundancy and 24/7 on-site security.</p>
+      <div class="partner-card">
+        <div class="partner-card-icon" style="background:rgba(57,89,255,0.08);">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3959ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Tier-3 Datacenters</h3>
+        <div class="partner-card-label">Facility Partners</div>
+        <p>Our servers are co-located in Tier-3 certified datacenters across <a href="/datacenter.html" style="color:#3959ff;">Nepal, India, Singapore, and Germany</a> with N+1 power redundancy and 24/7 on-site security.</p>
       </div>
 
     </div>
