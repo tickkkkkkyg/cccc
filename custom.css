@@ -1977,3 +1977,106 @@ img {
     height: 100px;
   }
 }
+
+/* ===== COMPARISON TABLE – UPGRADED ELEMENTS ===== */
+.xyle-compare-savings-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 1.5px solid #f59e0b;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 14px;
+  color: #92400e;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+.xyle-compare-savings-bar strong { color: #78350f; }
+
+/* Price row highlight */
+.xc-price-row td { background: #f8faff; }
+.xc-price-row td.xc-xyle { background: rgba(57,89,255,0.06); }
+
+/* "Cheapest" pill inside the price cell */
+.xc-save-pill {
+  display: inline-block;
+  background: #dcfce7;
+  color: #15803d;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 20px;
+  padding: 2px 8px;
+  margin-left: 6px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Dimmed competitor price cells */
+.xc-dim {
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Score row (tfoot) */
+.xc-score-row td {
+  background: #0d1b2a;
+  color: #fff;
+  padding: 16px 14px;
+  border-top: 2px solid #1e3a5f;
+}
+.xc-score-label {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 11px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #475569 !important;
+  font-weight: 700 !important;
+}
+.xc-score-best { background: #1a2eb8 !important; }
+.xc-score-num {
+  display: block;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #64748b;
+  line-height: 1.1;
+}
+.xc-score-best .xc-score-num { font-size: 26px; color: #93c5fd; }
+.xc-score-denom {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 11px;
+  color: #475569;
+}
+.xc-score-best .xc-score-denom { color: #93c5fd; opacity: 0.75; }
+.xc-score-low { color: #475569; }
+
+/* Mobile: horizontal scroll + sticky first column */
+@media (max-width: 680px) {
+  .xyle-compare-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 14px;
+  }
+  .xyle-compare-table {
+    min-width: 540px;
+  }
+  .xyle-compare-table thead th.xc-feature-col,
+  .xyle-compare-table tbody td.xc-feature,
+  .xyle-compare-table tfoot td.xc-feature {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.07);
+  }
+  .xc-price-row td.xc-feature { background: #f8faff !important; }
+  .xc-score-row td.xc-feature { background: #0d1b2a !important; box-shadow: 2px 0 8px rgba(0,0,0,0.25); }
+  .xyle-compare-savings-bar { font-size: 13px; gap: 8px; padding: 10px 14px; }
+}
