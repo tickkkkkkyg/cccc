@@ -10,7 +10,11 @@
     '.sm-card',
     '.datacenter-card',
     '.blog-card',
-    '.company-card'
+    '.company-card',
+    '.xyle-rv-card',
+    '.xyle-loc-card',
+    '.xyle-loc-map-wrap',
+    '.xyle-reviews-header'
   ].join(',');
   var motion = {
     scrollTo: null
