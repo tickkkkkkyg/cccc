@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html data-wf-domain="www.xyle.host" data-wf-page="blog-fix-lag" data-wf-site="661bfcfd7a14900ef3a20e61" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>How to Fix Lag in Minecraft | XyleHosting Blog</title>
+  <meta name="description" content="TPS drops, chunk loading stutters, rubber-banding — lag ruins Minecraft gameplay. This complete guide covers every fix from server settings to hardware upgrades."/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="How to Fix Lag in Minecraft | XyleHosting Blog"/>
+  <meta property="og:description" content="Complete guide to fixing Minecraft lag — server settings, plugins, hardware, and hosting tips."/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.xyle.host/blog/how-to-fix-lag-in-minecraft.html"/>
+  <meta property="og:site_name" content="XyleHosting"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="How to Fix Lag in Minecraft | XyleHosting Blog"/>
+  <link rel="canonical" href="https://www.xyle.host/blog/how-to-fix-lag-in-minecraft.html"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link href="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/css/surf-hosting.webflow.b4719a4e3.min.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({google:{families:["Space Grotesk:regular,500,600,700","IBM Plex Mono:regular,italic,500,600,700"]}});</script>
+  <script type="text/javascript">!(function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js";("ontouchstart" in o||(o.DocumentTouch&&c instanceof DocumentTouch))&&(n.className+=t+"touch");})(window,document);</script>
+  <link href="/logo.webp" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/logo.webp" rel="apple-touch-icon"/>
+  <link href="/custom.css" rel="stylesheet" type="text/css"/>
+  <style>
+    .blog-article{max-width:760px;margin:0 auto;padding:0 24px 80px;}
+    .blog-article h2{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:800;color:#0d1b2a;margin:48px 0 16px;border-left:4px solid #3959ff;padding-left:16px;}
+    .blog-article h3{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:700;color:#0d1b2a;margin:32px 0 12px;}
+    .blog-article p{font-family:'Space Grotesk',sans-serif;font-size:16px;color:rgba(13,27,42,0.75);line-height:1.8;margin:0 0 18px;}
+    .blog-article ul{padding-left:0;list-style:none;display:flex;flex-direction:column;gap:10px;margin:0 0 20px;}
+    .blog-article ul li{display:flex;align-items:flex-start;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:15px;color:rgba(13,27,42,0.75);line-height:1.65;}
+    .blog-article ul li::before{content:'';display:inline-block;width:18px;height:18px;min-width:18px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9' cy='9' r='9' fill='%23d1fae5'/%3E%3Cpath d='M5 9l3 3 5-5' stroke='%23059669' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;margin-top:2px;}
+    .blog-callout{background:#eef2ff;border-left:4px solid #3959ff;border-radius:0 12px 12px 0;padding:18px 22px;margin:28px 0;font-family:'Space Grotesk',sans-serif;font-size:15px;color:#1a2eb8;line-height:1.7;}
+    .blog-code{background:#f4f6fb;border:1px solid #dfe6ff;border-radius:8px;padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:#1a2eb8;margin:0 0 20px;overflow-x:auto;}
+  </style>
+</head>
+<body>
+  <div data-w-id="9c896d19-12ed-148e-4e5a-1c014986d7c2" data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+    <div class="nav-block">
+      <div class="nav">
+        <a href="/" class="brand w-nav-brand"><span style="display:inline-flex;align-items:center;gap:9px;text-decoration:none;"><img src="/logo.webp" alt="XyleHosting" width="32" height="32" style="flex-shrink:0;border-radius:8px;object-fit:contain;"/><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#1a2eb8;letter-spacing:-0.5px;white-space:nowrap;">Xyle<span style="color:#3959ff;">Hosting</span></span></span></a>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+          <a href="/products.html" class="nav-link w-nav-link">Products</a>
+          <a href="/server-marketplace.html" class="nav-link w-nav-link">Server Marketplace</a>
+          <a href="/company.html" class="nav-link w-nav-link">About Us</a>
+          <a href="/datacenter.html" class="nav-link w-nav-link">Data Centers</a>
+          <a href="/blog.html" class="nav-link w-nav-link">Blog</a>
+          <div class="button-mobile">
+            <a href="https://billing.xyle.host" class="nav-button-outline w-button">Billing Area</a>
+            <a href="https://panel.xyle.host" class="nav-button w-button">Server Panel</a>
+          </div>
+        </nav>
+      </div>
+      <div class="nav">
+        <div class="button-desktop">
+          <a href="https://billing.xyle.host/" class="nav-button-outline w-button">Billing Area</a>
+          <a href="/panels" class="nav-button w-button">Control Panels</a>
+        </div>
+        <div class="menu-button w-nav-button"><div class="icon-menu w-icon-nav-menu"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-top">
+    <div class="content">
+      <div class="block-top">
+        <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;">
+          <a href="/blog.html" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#3959ff;text-decoration:none;">← Back to Blog</a>
+          <span style="color:rgba(13,27,42,0.25);font-size:12px;">|</span>
+          <span style="padding:3px 12px;background:#d1fae5;border-radius:100px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#065f46;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;">Minecraft</span>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(13,27,42,0.42);">May 20, 2026 · 6 min read</span>
+        </div>
+        <h1 class="heading-top" style="font-size:42px;line-height:1.15;">How to Fix Lag in Minecraft</h1>
+        <p class="paragraph-top">TPS drops, chunk loading stutters, rubber-banding — lag ruins gameplay. This guide covers every fix from server settings to hardware.</p>
+        <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-top:20px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3959ff,#1a2eb8);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:#fff;">PB</div>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;color:#0d1b2a;">Pushkar Budha</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:14px;color:rgba(13,27,42,0.4);">· XyleHosting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="blog-article">
+
+      <h2>What causes Minecraft lag?</h2>
+      <p>Lag in Minecraft comes in two forms: <strong>client-side lag</strong> (your computer struggling to render the game) and <strong>server-side lag</strong> (the server not processing game ticks fast enough). Server lag is the most common issue for multiplayer servers and is measured in <strong>TPS (ticks per second)</strong>. A healthy server runs at 20 TPS. Anything below 15 TPS and players will notice rubber-banding and chunk loading delays.</p>
+
+      <h2>1. Check your server's TPS</h2>
+      <p>Before fixing anything, measure the problem. Install the <strong>Spark</strong> profiler plugin and run:</p>
+      <div class="blog-code">/spark tps</div>
+      <p>This shows your current TPS and highlights which plugins or processes are dragging it down. Always profile before optimising — guessing wastes time.</p>
+
+      <h2>2. Allocate the right amount of RAM</h2>
+      <p>Running too little RAM is the #1 cause of lag on budget servers. Here are rough minimums:</p>
+      <ul>
+        <li>Vanilla server, 5–10 players: 2–3 GB RAM</li>
+        <li>Spigot/Paper, 10–20 players: 4–6 GB RAM</li>
+        <li>Modpack (Forge/Fabric), 5–15 players: 6–10 GB RAM</li>
+        <li>Large community (30+ players): 10–16 GB RAM</li>
+      </ul>
+      <div class="blog-callout">XyleHosting plans start from 4 GB RAM. If your server is constantly GC-pausing, upgrading your plan is the fastest fix.</div>
+
+      <h2>3. Switch from Vanilla to Paper</h2>
+      <p><strong>Paper</strong> is a high-performance Minecraft server software that fixes hundreds of vanilla bugs and adds async chunk loading, entity culling, and tick rate optimisation. Switching from vanilla to Paper typically improves TPS by 20–40% with no gameplay changes.</p>
+      <p>Download Paper at <strong>papermc.io</strong> and swap your server JAR — that's it. Your world and plugins carry over unchanged.</p>
+
+      <h2>4. Optimise your server.properties and paper.yml</h2>
+      <p>These settings have the biggest impact on TPS:</p>
+      <ul>
+        <li><strong>view-distance</strong> — set to 6–8 instead of the default 10. Lower = fewer chunks to process.</li>
+        <li><strong>simulation-distance</strong> — set to 4–6. This controls how far mobs and redstone tick.</li>
+        <li><strong>max-tick-time</strong> — set to -1 in paper.yml to prevent the watchdog from killing the server on spikes.</li>
+        <li><strong>entity-tracking-range</strong> — reduce mob tracking distance in paper.yml to cut network load.</li>
+        <li><strong>mob-spawn-range</strong> — reduce from 8 to 4–6 to cut entity count.</li>
+      </ul>
+
+      <h2>5. Remove or replace laggy plugins</h2>
+      <p>A single poorly coded plugin can tank your TPS from 20 to 10. Use Spark to identify the culprit:</p>
+      <div class="blog-code">/spark profiler start</div>
+      <p>Let it run for 2–3 minutes, then run <code>/spark profiler stop</code> and open the report URL. Look for plugins consuming more than 5% of tick time and replace them with optimised alternatives.</p>
+      <p>Common offenders: dynmap (use BlueMap instead), Citizens (limit NPC count), and WorldGuard (enable chunk-based caching).</p>
+
+      <h2>6. Control mob spawning</h2>
+      <p>Entities are the biggest TPS killer on busy servers. Install <strong>ClearLag</strong> or use Paper's built-in entity limits. In paper.yml, set per-category spawn limits:</p>
+      <ul>
+        <li>Reduce <code>spawn-limits.monsters</code> from 70 to 30–40</li>
+        <li>Reduce <code>spawn-limits.animals</code> from 10 to 5–8</li>
+        <li>Enable <code>per-player-mob-spawns: true</code> to distribute load evenly</li>
+      </ul>
+
+      <h2>7. Upgrade your hosting hardware</h2>
+      <p>Minecraft is highly single-threaded. The metric that matters most is <strong>single-core clock speed</strong>, not total core count. AMD Ryzen 9 processors (used in XyleHosting Premium plans) excel here — their high per-core performance keeps TPS stable even under load.</p>
+      <p>If you're on a budget plan and have tried all the software fixes above, upgrading to a Premium plan with a Ryzen processor is the most reliable solution.</p>
+
+      <div class="blog-callout">
+        <strong>Quick checklist:</strong> Use Paper instead of Vanilla · Set view-distance to 6–8 · Profile with Spark · Reduce mob spawn limits · Check for laggy plugins · Upgrade RAM if below 4 GB
+      </div>
+
+      <h3>Still lagging after all of this?</h3>
+      <p>Open a support ticket with XyleHosting and share your Spark profile URL. Our team will review your server configuration and recommend the right plan for your player count and modpack.</p>
+
+      <div style="margin-top:48px;background:#eef2ff;border-radius:20px;padding:32px;text-align:center;">
+        <p style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#0d1b2a;margin:0 0 10px;">Ready for a lag-free server?</p>
+        <p style="font-family:'Space Grotesk',sans-serif;font-size:15px;color:#667085;margin:0 0 20px;">XyleHosting Minecraft plans run on NVMe SSDs with high-clock AMD and Intel processors — built for performance.</p>
+        <a href="https://billing.xyle.host" target="_blank" style="display:inline-block;background:#3959ff;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;padding:14px 32px;border-radius:12px;text-decoration:none;">Get Started →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-footer">
+    <div class="content">
+      <div class="w-layout-grid grid-footer">
+        <div class="block-footer">
+          <span style="display:inline-flex;align-items:center;gap:9px;margin-bottom:6px;"><img src="/logo.webp" alt="XyleHosting" width="30" height="30" style="flex-shrink:0;object-fit:contain;"/><span style="font-family:'Space Grotesk',Arial,sans-serif;font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.5px;">Xyle<span style="color:#adc8ff;">Hosting</span></span></span>
+          <div class="paragraph-footer">Fast, Reliable, Secure - Your Project Deserves the Best Hosting</div>
+          <div class="block-social">
+            <a href="https://discord.gg/xylehosting" target="_blank" class="social-link w-inline-block"><img src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204dd681dcca70c1267210_discord.png" loading="eager" alt="" class="icon-social"/></a>
+            <a href="https://twitter.com/xylehosting" target="_blank" class="social-link w-inline-block"><img src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/66204e4f289826e76c5dcc9f_twitter.png" loading="eager" alt="" class="icon-social"/></a>
+          </div>
+        </div>
+        <div class="block-footer">
+          <div class="subtitle-footer">Solutions</div>
+          <a href="/category/minecraft.html" class="link-footer">Minecraft</a>
+          <a href="/category/web-hosting.html" class="link-footer">Website Hosting</a>
+          <a href="/category/essential-vps.html" class="link-footer">VPS Hosting</a>
+          <a href="/server-marketplace.html" class="link-footer">Dedicated Servers</a>
+        </div>
+        <div class="block-footer">
+          <div class="subtitle-footer">Company</div>
+          <a href="/company.html" class="link-footer">About Us</a>
+          <a href="/blog.html" class="link-footer">Blog</a>
+          <a href="/datacenter.html" class="link-footer">Data Centers</a>
+        </div>
+        <div class="block-footer">
+          <div class="subtitle-footer">Legal</div>
+          <a href="/terms-of-service.html" class="link-footer">Terms of Service</a>
+          <a href="/privacy-policy.html" class="link-footer">Privacy Policy</a>
+          <a href="/refund-policy.html" class="link-footer">Refund Policy</a>
+        </div>
+      </div>
+      <div class="block-footer-down"><div class="text-footer-down">All rights reserved. XyleHosting Pvt Ltd | Mojang is a trademark of Minecraft</div></div>
+    </div>
+  </section>
+
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=661bfcfd7a14900ef3a20e61" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="https://cdn.prod.website-files.com/661bfcfd7a14900ef3a20e61/js/webflow.97c622cc2.js" type="text/javascript"></script>
+  <script src="/performance.js" defer></script>
+</body>
+</html>
