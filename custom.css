@@ -2024,38 +2024,42 @@ img {
   font-weight: 500;
 }
 
-/* Score row (tfoot) */
+/* Score row (tfoot) — light theme to match site */
 .xc-score-row td {
-  background: #0d1b2a;
-  color: #fff;
-  padding: 16px 14px;
-  border-top: 2px solid #1e3a5f;
+  background: #f0f4ff;
+  color: #0d1b2a;
+  padding: 18px 20px;
+  border-top: 2px solid #dfe6ff;
 }
 .xc-score-label {
   font-family: 'Space Grotesk', Arial, sans-serif;
   font-size: 11px !important;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #475569 !important;
+  color: #667085 !important;
   font-weight: 700 !important;
 }
-.xc-score-best { background: #1a2eb8 !important; }
+.xc-score-best {
+  background: #3959ff !important;
+  border-left: 2px solid #3959ff;
+  border-right: 2px solid #3959ff;
+}
 .xc-score-num {
   display: block;
   font-family: 'Space Grotesk', Arial, sans-serif;
   font-size: 22px;
   font-weight: 800;
-  color: #64748b;
+  color: #94a3b8;
   line-height: 1.1;
 }
-.xc-score-best .xc-score-num { font-size: 26px; color: #93c5fd; }
+.xc-score-best .xc-score-num { font-size: 26px; color: #fff; }
 .xc-score-denom {
   font-family: 'Space Grotesk', Arial, sans-serif;
   font-size: 11px;
-  color: #475569;
+  color: #94a3b8;
 }
-.xc-score-best .xc-score-denom { color: #93c5fd; opacity: 0.75; }
-.xc-score-low { color: #475569; }
+.xc-score-best .xc-score-denom { color: rgba(255,255,255,0.75); }
+.xc-score-low { color: #94a3b8; }
 
 /* Mobile: horizontal scroll + sticky first column */
 @media (max-width: 680px) {
@@ -2077,6 +2081,40 @@ img {
     box-shadow: 2px 0 8px rgba(0,0,0,0.07);
   }
   .xc-price-row td.xc-feature { background: #f8faff !important; }
-  .xc-score-row td.xc-feature { background: #0d1b2a !important; box-shadow: 2px 0 8px rgba(0,0,0,0.25); }
+  .xc-score-row td.xc-feature { background: #f0f4ff !important; box-shadow: 2px 0 8px rgba(57,89,255,0.08); }
   .xyle-compare-savings-bar { font-size: 13px; gap: 8px; padding: 10px 14px; }
+}
+
+/* ===== RESPONSIVE PLAN CARD GRID (Minecraft, VPS, etc.) ===== */
+.xp-plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .xp-plan-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .xp-plan-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .xp-plan-grid > div {
+    padding: 24px 20px !important;
+  }
+}
+
+/* ===== BLOG ARTICLE RESPONSIVE ===== */
+@media (max-width: 680px) {
+  .blog-article { padding: 0 16px 60px !important; }
+  .blog-article h2 { font-size: 20px !important; margin: 36px 0 12px !important; }
+  .blog-article h3 { font-size: 17px !important; }
+  .blog-article p { font-size: 15px !important; }
+  .ddos-step { flex-direction: column; gap: 12px; padding: 20px 16px; }
+  .ddos-step-num { width: 34px; height: 34px; font-size: 14px; }
+  .blog-callout { padding: 14px 16px; font-size: 14px; }
 }
