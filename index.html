@@ -99,12 +99,33 @@
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "XyleHosting",
+  "legalName": "XyleHosting Pvt Ltd",
   "url": "https://www.xyle.host",
   "logo": "https://www.xyle.host/logo.webp",
-  "description": "XyleHosting, founded by Pushkar Budha, offers cheap Minecraft hosting in Nepal, free website hosting in Nepal, affordable KVM VPS, Discord bot hosting, and dedicated servers. Servers in Nepal, India, Singapore & Germany.",
-  "founder": {"@type":"Person","name":"Pushkar Budha"},
-  "contactPoint": {"@type":"ContactPoint","contactType":"customer support","url":"https://billing.xyle.host"},
-  "sameAs": ["https://billing.xyle.host"]
+  "description": "XyleHosting, founded by Pushkar Budha, offers the cheapest Minecraft hosting in Nepal starting at $3.99/mo, KVM VPS hosting from $4.99/mo, web hosting, Discord bot hosting, and dedicated servers. Infrastructure in Nepal, India, Singapore, and Germany.",
+  "founder": {
+    "@type": "Person",
+    "name": "Pushkar Budha",
+    "jobTitle": "Founder & CEO",
+    "nationality": {"@type": "Country", "name": "Nepal"},
+    "url": "https://www.xyle.host/company.html"
+  },
+  "foundingDate": "2024",
+  "foundingLocation": {"@type": "Place", "name": "Dhangadhi, Nepal"},
+  "slogan": "World-class infrastructure shouldn't be a luxury.",
+  "areaServed": [
+    {"@type": "Country", "name": "Nepal"},
+    {"@type": "Country", "name": "India"},
+    {"@type": "Country", "name": "Singapore"},
+    {"@type": "Country", "name": "Germany"}
+  ],
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "url": "https://billing.xyle.host"},
+  "sameAs": [
+    "https://discord.gg/xylehosting",
+    "https://www.linkedin.com/company/xylehosting",
+    "https://twitter.com/xylehosting",
+    "https://billing.xyle.host"
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -113,7 +134,12 @@
   "@type": "WebSite",
   "name": "XyleHosting",
   "url": "https://www.xyle.host",
-  "description": "Affordable hosting: Minecraft from $3.99/mo, KVM VPS from $4.99/mo, Web Hosting from $3.99/mo."
+  "description": "XyleHosting, founded by Pushkar Budha — affordable Minecraft hosting from $3.99/mo, KVM VPS from $4.99/mo, web hosting, Discord bot hosting, and dedicated servers for Nepal, India, Singapore, and Germany.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {"@type": "EntryPoint", "urlTemplate": "https://www.xyle.host/category/minecraft.html?q={search_term_string}"},
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -122,11 +148,59 @@
   "@type": "ItemList",
   "name": "XyleHosting Plans",
   "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Minecraft Hosting","url":"https://www.xyle.host/category/minecraft.html","description":"Minecraft server hosting from $3.99/mo"},
-    {"@type":"ListItem","position":2,"name":"KVM VPS Hosting","url":"https://www.xyle.host/category/essential-vps.html","description":"KVM VPS from $4.99/mo"},
-    {"@type":"ListItem","position":3,"name":"Web Hosting","url":"https://www.xyle.host/category/web-hosting.html","description":"Shared web hosting from $3.99/mo"},
-    {"@type":"ListItem","position":4,"name":"Discord Bot Hosting","url":"https://www.xyle.host/category/discord-bot.html","description":"Discord bot hosting from $4.50/quarter"},
-    {"@type":"ListItem","position":5,"name":"Dedicated Servers","url":"https://www.xyle.host/server-marketplace.html","description":"Dedicated servers from $54/mo"}
+    {"@type":"ListItem","position":1,"name":"Minecraft Hosting Nepal","url":"https://www.xyle.host/category/minecraft.html","description":"Cheapest Minecraft server hosting in Nepal from $3.99/mo — Intel & Ryzen plans, NVMe SSD, DDoS protection"},
+    {"@type":"ListItem","position":2,"name":"KVM VPS Hosting","url":"https://www.xyle.host/category/essential-vps.html","description":"KVM VPS from $4.99/mo — NVMe Ryzen, Storage VPS, and KVM plans"},
+    {"@type":"ListItem","position":3,"name":"Web Hosting","url":"https://www.xyle.host/category/web-hosting.html","description":"Shared web hosting from $3.99/mo — Starter, Deluxe, and Business plans"},
+    {"@type":"ListItem","position":4,"name":"Discord Bot Hosting","url":"https://www.xyle.host/category/discord-bot.html","description":"Discord bot hosting from $4.50/quarter — 512MB and 1GB plans"},
+    {"@type":"ListItem","position":5,"name":"Dedicated Servers","url":"https://www.xyle.host/server-marketplace.html","description":"Dedicated servers from $54/mo — full hardware control, Nepal and international locations"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the cheapest Minecraft hosting in Nepal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XyleHosting offers the cheapest Minecraft server hosting in Nepal starting at just $3.99/month. Plans include NVMe SSD storage, DDoS protection, free offsite backups, and 24/7 support. Server locations include Nepal, India, Singapore, and Germany. XyleHosting was founded by Pushkar Budha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who founded XyleHosting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XyleHosting was founded by Pushkar Budha, a young entrepreneur from Dhangadhi, Nepal. He built XyleHosting from the ground up after teaching himself server administration and networking, with the mission to make world-class hosting infrastructure affordable for everyone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does XyleHosting offer free website hosting in Nepal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XyleHosting offers extremely affordable web hosting in Nepal starting at $3.99/month with cPanel, free SSL, unlimited bandwidth, and 24/7 support — making it one of the most cost-effective web hosting options in Nepal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where are XyleHosting servers located?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XyleHosting operates server infrastructure in Nepal, India, Singapore, and Germany. This gives customers across South Asia and Europe low-latency connections to their hosted servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What DDoS protection does XyleHosting provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "XyleHosting partners with NeoProtect for enterprise-grade DDoS mitigation on all plans. Every hosted server — Minecraft, VPS, web hosting, and dedicated servers — includes always-on DDoS protection at no extra cost."
+      }
+    }
   ]
 }
 </script>
