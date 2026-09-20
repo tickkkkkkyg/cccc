@@ -1,0 +1,19 @@
+{
+  "name": "xylehosting-website",
+  "version": "1.0.0",
+  "description": "XyleHosting website with Vercel Web Analytics",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 server.py",
+    "start": "python3 server.py"
+  },
+  "keywords": [
+    "hosting",
+    "xylehosting"
+  ],
+  "author": "XyleHosting",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
